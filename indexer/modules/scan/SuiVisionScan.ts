@@ -1,6 +1,6 @@
 import { ethers } from 'ethers'
 
-import { API_URL, EVENT } from '../../common/constants'
+import { API_KEY, API_URL, CONTRACT, EVENT } from '../../common/constants'
 import { sleep } from '../../common/helper'
 import { IScan } from '../../interfaces/IScan'
 import { EventLog } from '../../types/EventLog'
@@ -38,7 +38,7 @@ export class SuiVisionScan implements IScan {
 
         let nextCursor: string = flag
 
-        const url = API_URL[this.network]
+        const url = `${API_URL[this.network]}/${API_KEY[this.network]}`
         const postData = {
             jsonrpc: '2.0',
             id: 8,
@@ -46,7 +46,7 @@ export class SuiVisionScan implements IScan {
             params: [
                 {
                     filter: {
-                        InputObject: '0xe9ae3e2d32cdf659ad5db4219b1086cc0b375da5c4f8859c872148895a2eace2'
+                        InputObject: CONTRACT[this.network].xcall[0]
                     },
                     options: {
                         showBalanceChanges: true,
