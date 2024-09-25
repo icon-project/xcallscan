@@ -48,7 +48,7 @@ export class IconSubscriber implements ISubscriber {
         return ''
     }
 
-    async findTxInBlock(iconService: IconService, blockNumber: BigNumber, eventName: string) {
+    async findTxInBlock(iconService: IconService, blockNumber: BigNumber, eventName: string, sn: number | undefined) {
         let block = undefined
         try {
             block = await retryAsync(
@@ -79,6 +79,10 @@ export class IconSubscriber implements ISubscriber {
                 for (let e = 0; e < confirmedEventLogs.length; e++) {
                     const tryDecodeEventLog = await this.decoder.decodeEventLog(confirmedEventLogs[e], eventName)
                     if (tryDecodeEventLog) {
+                        // skip if sn is not matched
+                        if (sn && sn != tryDecodeEventLog._sn) {
+                            continue
+                        }
                         return { tx: confirmedTxDetail, block: block }
                     }
                 }
@@ -125,10 +129,10 @@ export class IconSubscriber implements ISubscriber {
                     let blockHash = notification.hash
                     let blockNumber = notification.height
                     let prevBlockNumber = new BigNumber(Number(notification.height) - 1)
-                    let txInBlock = await this.findTxInBlock(iconService, prevBlockNumber, eventName)
+                    let txInBlock = await this.findTxInBlock(iconService, prevBlockNumber, eventName, decodeEventLog._sn)
                     if (!txInBlock) {
                         // try current block from notification
-                        txInBlock = await this.findTxInBlock(iconService, blockNumber, eventName)
+                        txInBlock = await this.findTxInBlock(iconService, blockNumber, eventName, decodeEventLog._sn)
                     }
 
                     if (txInBlock) {
