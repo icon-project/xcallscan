@@ -30,7 +30,8 @@ const NETWORK = {
     OPTIMISM: 'optimism',
     SUI: 'sui',
     POLYGON: 'polygon',
-    STELLAR: 'stellar'
+    STELLAR: 'stellar',
+    SOLANA: 'solana'
 }
 
 const metaUrls = {
@@ -50,7 +51,8 @@ const metaUrls = {
         [NETWORK.OPTIMISM]: useMainnet ? 'https://optimistic.etherscan.io/tx/' : 'https://sepolia-optimism.etherscan.io/tx/',
         [NETWORK.SUI]: useMainnet ? 'https://suiscan.xyz/mainnet/tx/' : 'https://suiscan.xyz/testnet/tx/',
         [NETWORK.POLYGON]: useMainnet ? 'https://polygonscan.com/tx/' : 'https://amoy.polygonscan.com/tx/',
-        [NETWORK.STELLAR]: useMainnet ? 'https://stellar.expert/explorer/public/tx/' : 'https://stellar.expert/explorer/testnet/tx/'
+        [NETWORK.STELLAR]: useMainnet ? 'https://stellar.expert/explorer/public/tx/' : 'https://stellar.expert/explorer/testnet/tx/',
+        [NETWORK.SOLANA]: useMainnet ? 'https://solscan.io/tx/{txHash}' : 'https://solscan.io/tx/{txHash}?cluster=testnet'
     }
 }
 
