@@ -31,7 +31,8 @@ const NETWORK = {
     SUI: 'sui',
     POLYGON: 'polygon',
     STELLAR: 'stellar',
-    SOLANA: 'solana'
+    SOLANA: 'solana',
+    NIBIRU: 'nibiru'
 }
 
 const buildProviderUrls = (urls: string[]) => {
@@ -72,7 +73,8 @@ const RPC_URLS: { [network: string]: string[] } = {
 
     [NETWORK.SUI]: buildProviderUrls(CONFIG_NETWORKS.sui.rpcs),
     [NETWORK.STELLAR]: buildProviderUrls(CONFIG_NETWORKS.stellar.rpcs),
-    [NETWORK.SOLANA]: buildProviderUrls(CONFIG_NETWORKS.solana.rpcs)
+    [NETWORK.SOLANA]: buildProviderUrls(CONFIG_NETWORKS.solana.rpcs),
+    [NETWORK.NIBIRU]: buildProviderUrls(CONFIG_NETWORKS.nibiru.rpcs)
 }
 
 const WSS_URLS: { [network: string]: string[] } = {
@@ -94,7 +96,8 @@ const WSS_URLS: { [network: string]: string[] } = {
 
     [NETWORK.SUI]: buildProviderUrls(CONFIG_NETWORKS.solana.wss),
     [NETWORK.STELLAR]: buildProviderUrls(CONFIG_NETWORKS.stellar.wss),
-    [NETWORK.SOLANA]: buildProviderUrls(CONFIG_NETWORKS.solana.wss)
+    [NETWORK.SOLANA]: buildProviderUrls(CONFIG_NETWORKS.solana.wss),
+    [NETWORK.NIBIRU]: buildProviderUrls(CONFIG_NETWORKS.nibiru.wss)
 }
 
 const SUBSCRIBER_NETWORKS = process.env.SUBSCRIBER_NETWORKS ? process.env.SUBSCRIBER_NETWORKS.split(',') : []
@@ -118,7 +121,8 @@ const API_URL: { [network: string]: string } = {
 
     [NETWORK.SUI]: CONFIG_NETWORKS.sui.api,
     [NETWORK.STELLAR]: CONFIG_NETWORKS.stellar.api,
-    [NETWORK.SOLANA]: CONFIG_NETWORKS.solana.api
+    [NETWORK.SOLANA]: CONFIG_NETWORKS.solana.api,
+    [NETWORK.NIBIRU]: CONFIG_NETWORKS.nibiru.api
 }
 
 const BTP_NETWORK_ID: { [network: string]: string } = {
@@ -139,7 +143,8 @@ const BTP_NETWORK_ID: { [network: string]: string } = {
 
     [NETWORK.SUI]: CONFIG_NETWORKS.sui.btp_network_id,
     [NETWORK.STELLAR]: CONFIG_NETWORKS.stellar.btp_network_id,
-    [NETWORK.SOLANA]: CONFIG_NETWORKS.solana.btp_network_id
+    [NETWORK.SOLANA]: CONFIG_NETWORKS.solana.btp_network_id,
+    [NETWORK.NIBIRU]: CONFIG_NETWORKS.nibiru.btp_network_id
 }
 
 const API_KEY: { [network: string]: string } = {
@@ -155,7 +160,9 @@ const API_KEY: { [network: string]: string } = {
 
     [NETWORK.IBC_ARCHWAY]: process.env.SCAN_MINTSCAN_API_KEY ?? '',
     [NETWORK.IBC_NEUTRON]: '',
-    [NETWORK.IBC_INJECTIVE]: ''
+    [NETWORK.IBC_INJECTIVE]: '',
+
+    [NETWORK.NIBIRU]: process.env.SCAN_ROUTE_API_KEY ?? ''
 }
 
 const SERVICE_API_KEY = {
@@ -215,6 +222,10 @@ const CONTRACT: { [network: string]: { xcall: string[] } } = {
     // SOLANA
     [NETWORK.SOLANA]: {
         xcall: CONFIG_CONTRACTS.solana.xcall
+    },
+    // NIBIRU
+    [NETWORK.NIBIRU]: {
+        xcall: CONFIG_CONTRACTS.nibiru.xcall
     }
 }
 

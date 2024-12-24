@@ -13,7 +13,8 @@ const NETWORK = {
     SUI: 'sui',
     POLYGON: 'polygon',
     STELLAR: 'stellar',
-    SOLANA: 'solana'
+    SOLANA: 'solana',
+    NIBIRU: 'nibiru'
 }
 
 const NETWORK_DETAILS = {
@@ -108,6 +109,12 @@ const NETWORK_DETAILS = {
         id: NETWORK.SOLANA,
         name: 'Solana',
         logo: `/images/network-${NETWORK.SOLANA}.png`,
+        nativeAsset: 'SOL'
+    },
+    [NETWORK.NIBIRU]: {
+        id: NETWORK.NIBIRU,
+        name: 'Nibiru',
+        logo: `/images/network-${NETWORK.NIBIRU}.png`,
         nativeAsset: 'SOL'
     }
 }

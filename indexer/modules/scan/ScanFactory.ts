@@ -24,7 +24,9 @@ export class ScanFactory {
             network == NETWORK.BASE ||
             network == NETWORK.ARBITRUM ||
             network == NETWORK.OPTIMISM ||
-            network == NETWORK.POLYGON
+            network == NETWORK.POLYGON ||
+            network == NETWORK.AVAX ||
+            network == NETWORK.NIBIRU
         ) {
             scan = new EvmScan(network)
         }
@@ -37,9 +39,6 @@ export class ScanFactory {
         }
         if (network == NETWORK.IBC_INJECTIVE) {
             scan = new InjectiveScan(network)
-        }
-        if (network == NETWORK.AVAX) {
-            scan = new EvmScan(network)
         }
         if (network == NETWORK.SUI) {
             scan = new SuiVisionScan(network)

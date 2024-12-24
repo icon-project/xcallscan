@@ -210,6 +210,14 @@
             "btp_network_id": "solana",
             "block_height": 0,
             "block_timestamp": 0
+        },
+        "nibiru": {
+            "api": "https://api.routescan.io/v2/network/mainnet/evm/7210/etherscan/api",
+            "rpcs": ["TBD", "https://rpc.nibiru.fi:443"],
+            "wss": [],
+            "btp_network_id": "TBD",
+            "block_height": 0,
+            "block_timestamp": 0
         }
     },
     "contracts": {
@@ -261,6 +269,9 @@
         },
         "solana": {
             "xcall": ["3LWnGCRFuS4TJ5WeDKeWdoSRptB2tzeEFhSBFFu4ogMo"]
+        },
+        "nibiru": {
+            "xcall": ["TBD"]
         }
     }
 }

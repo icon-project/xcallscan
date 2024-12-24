@@ -34,7 +34,8 @@ const NETWORK = {
 
     SUI: 'sui',
     STELLAR: 'stellar',
-    SOLANA: 'solana'
+    SOLANA: 'solana',
+    NIBIRU: 'nibiru'
 }
 
 const buildProviderUrls = (urls) => {
@@ -74,7 +75,8 @@ const RPC_URLS = {
 
     [NETWORK.SUI]: buildProviderUrls(CONFIG_NETWORKS.sui.rpcs),
     [NETWORK.STELLAR]: buildProviderUrls(CONFIG_NETWORKS.stellar.rpcs),
-    [NETWORK.SOLANA]: buildProviderUrls(CONFIG_NETWORKS.solana.rpcs)
+    [NETWORK.SOLANA]: buildProviderUrls(CONFIG_NETWORKS.solana.rpcs),
+    [NETWORK.NIBIRU]: buildProviderUrls(CONFIG_NETWORKS.nibiru.rpcs)
 }
 
 const META_URLS = {
@@ -95,7 +97,8 @@ const META_URLS = {
         [NETWORK.SUI]: USE_MAINNET ? 'https://suiscan.xyz/mainnet/tx/' : 'https://suiscan.xyz/testnet/tx/',
         [NETWORK.POLYGON]: USE_MAINNET ? 'https://polygonscan.com/tx/' : 'https://amoy.polygonscan.com/tx/',
         [NETWORK.STELLAR]: USE_MAINNET ? 'https://stellar.expert/explorer/public/tx/' : 'https://stellar.expert/explorer/testnet/tx/',
-        [NETWORK.SOLANA]: USE_MAINNET ? 'https://explorer.solana.com/tx/{txHash}' : 'https://explorer.solana.com/tx/{txHash}?cluster=testnet'
+        [NETWORK.SOLANA]: USE_MAINNET ? 'https://explorer.solana.com/tx/{txHash}' : 'https://explorer.solana.com/tx/{txHash}?cluster=testnet',
+        [NETWORK.NIBIRU]: USE_MAINNET ? 'TBD' : 'https://evm-explorer.nibiru.fi/tx/'
     }
 }
 
