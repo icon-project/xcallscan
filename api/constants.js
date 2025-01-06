@@ -17,24 +17,10 @@ const WEB3_INSTANTNODES_API_KEY = process.env.WEB3_INSTANTNODES_API_KEY
 const WEB3_QUICKNODE_API_KEY = process.env.WEB3_QUICKNODE_API_KEY
 
 const NETWORK = {
-    ICON: 'icon',
-    HAVAH: 'havah',
-
-    BSC: 'bsc',
-    ETH2: 'eth2',
+ 
     AVAX: CONFIG_NETWORKS.avax.nid,
-    BASE: 'base',
-    ARBITRUM: 'arbitrum',
-    OPTIMISM: 'optimism',
-    POLYGON: 'polygon',
-
-    IBC_ARCHWAY: 'ibc_archway',
-    IBC_NEUTRON: 'ibc_neutron',
-    IBC_INJECTIVE: 'ibc_injective',
-
     SUI: CONFIG_NETWORKS.sui.nid,
-    STELLAR: 'stellar',
-    SOLANA: 'solana'
+   
 }
 
 const buildProviderUrls = (urls) => {
@@ -57,24 +43,7 @@ const buildProviderUrls = (urls) => {
 }
 
 const RPC_URLS = {
-    [NETWORK.ICON]: buildProviderUrls(CONFIG_NETWORKS.icon.rpcs),
-    [NETWORK.HAVAH]: buildProviderUrls(CONFIG_NETWORKS.havah.rpcs),
 
-    [NETWORK.BSC]: buildProviderUrls(CONFIG_NETWORKS.bsc.rpcs),
-    [NETWORK.ETH2]: buildProviderUrls(CONFIG_NETWORKS.eth2.rpcs),
-    [NETWORK.AVAX]: buildProviderUrls(CONFIG_NETWORKS.avax.rpcs),
-    [NETWORK.BASE]: buildProviderUrls(CONFIG_NETWORKS.base.rpcs),
-    [NETWORK.ARBITRUM]: buildProviderUrls(CONFIG_NETWORKS.arbitrum.rpcs),
-    [NETWORK.OPTIMISM]: buildProviderUrls(CONFIG_NETWORKS.optimism.rpcs),
-    [NETWORK.POLYGON]: buildProviderUrls(CONFIG_NETWORKS.polygon.rpcs),
-
-    [NETWORK.IBC_ARCHWAY]: buildProviderUrls(CONFIG_NETWORKS.ibc_archway.rpcs),
-    [NETWORK.IBC_NEUTRON]: buildProviderUrls(CONFIG_NETWORKS.ibc_neutron.rpcs),
-    [NETWORK.IBC_INJECTIVE]: buildProviderUrls(CONFIG_NETWORKS.ibc_injective.rpcs),
-
-    [NETWORK.SUI]: buildProviderUrls(CONFIG_NETWORKS.sui.rpcs),
-    [NETWORK.STELLAR]: buildProviderUrls(CONFIG_NETWORKS.stellar.rpcs),
-    [NETWORK.SOLANA]: buildProviderUrls(CONFIG_NETWORKS.solana.rpcs)
 }
 
 const META_URLS = {
