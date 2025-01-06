@@ -148,7 +148,6 @@ const searchMessages = async (value) => {
 const getStatistic = async () => {
     const totalRs = await pool.query('SELECT count(*) FROM messages')
     const messages = Number(totalRs.rows[0].count)
-    console.log(totalRs)
     const fees = {}
     const networks = Object.values(NETWORK)
     for (let index = 0; index < networks.length; index++) {
