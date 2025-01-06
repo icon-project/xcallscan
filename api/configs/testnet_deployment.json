@@ -58,7 +58,8 @@
             "wss": [],
             "btp_network_id": "0xa869.fuji",
             "block_height": 0,
-            "block_timestamp": 0
+            "block_timestamp": 0,
+            "nid":6
         },
         "base": {
             "api": "https://api-sepolia.basescan.org/api",
@@ -90,7 +91,8 @@
             "wss": [],
             "btp_network_id": "sui-test",
             "block_height": 0,
-            "block_timestamp": 0
+            "block_timestamp": 0,
+            "nid":21
         },
         "polygon": {
             "api": "https://api-amoy.polygonscan.com/api",

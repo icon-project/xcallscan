@@ -9,6 +9,7 @@ import converter from '@/lib/converter'
 import useSWR from 'swr'
 import SkeletonTable from '@/components/skeleton-table'
 import MessagePagination from '@/components/message-pagination'
+import helper from '@/lib/helper'
 
 export default function Home() {
     // filter
@@ -29,6 +30,7 @@ export default function Home() {
     const totalMsgRes = useSWR('statistics/total_messages', () => FetchData.getTotalMessages(), {
         refreshInterval: 2000
     })
+    
 
     return (
         <div>
@@ -51,10 +53,10 @@ export default function Home() {
                 destNetwork={destNetwork}
                 actionType={actionType}
                 srcNetworkChanged={(value) => {
-                    setSrcNetwork(value)
+                    setSrcNetwork(helper.NETWORK_MAPPINGS[value])
                 }}
                 destNetworkChanged={(value) => {
-                    setDestNetwork(value)
+                    setDestNetwork(helper.NETWORK_MAPPINGS[value])
                 }}
                 actionTypeChanged={(value) => {
                     setActionType(value)

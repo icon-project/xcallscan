@@ -1,3 +1,9 @@
+
+const TestnetDeployment = require('../configs/testnet_deployment.json')
+const MainnetDeployment = require('../configs/mainnet_deployment.json')
+const USE_MAINNET = process.env.USE_MAINNET == 'true'
+const CONFIG_NETWORKS = USE_MAINNET ? MainnetDeployment.networks : TestnetDeployment.networks
+
 const NETWORK = {
     ICON: 'icon',
     BSC: 'bsc',
@@ -6,14 +12,24 @@ const NETWORK = {
     IBC_ARCHWAY: 'ibc_archway',
     IBC_NEUTRON: 'ibc_neutron',
     IBC_INJECTIVE: 'ibc_injective',
-    AVAX: '6',
+    AVAX: 'avax',
     BASE: 'base',
     ARBITRUM: 'arbitrum',
     OPTIMISM: 'optimism',
-    SUI: '21',
+    SUI: 'sui',
     POLYGON: 'polygon',
     STELLAR: 'stellar',
     SOLANA: 'solana'
+}
+
+const NETWORK_MAPPINGS = {
+    [NETWORK.SUI]: CONFIG_NETWORKS.sui.nid,
+    [NETWORK.AVAX]: CONFIG_NETWORKS.avax.nid,
+}
+
+const REV_NETWORK_MAPPINGS = {
+    [CONFIG_NETWORKS.sui.nid]: [NETWORK.SUI],
+    [CONFIG_NETWORKS.avax.nid]: [NETWORK.AVAX],
 }
 
 const NETWORK_DETAILS = {
@@ -45,8 +61,9 @@ const NETWORK_DETAILS = {
     [NETWORK.AVAX]: {
         id: NETWORK.AVAX,
         name: 'Avax',
-        logo: `/images/network-${NETWORK.AVAX}.png`,
-        nativeAsset: 'AVAX'
+        logo: `/images/network-avax.png`,
+        nativeAsset: 'AVAX',
+        nid: 6
     },
     [NETWORK.BASE]: {
         id: NETWORK.BASE,
@@ -95,8 +112,9 @@ const NETWORK_DETAILS = {
     [NETWORK.SUI]: {
         id: NETWORK.SUI,
         name: 'Sui',
-        logo: `/images/network-${NETWORK.SUI}.png`,
-        nativeAsset: 'SUI'
+        logo: `/images/network-sui.png`,
+        nativeAsset: 'SUI',
+        nid: 6
     },
     [NETWORK.STELLAR]: {
         id: NETWORK.STELLAR,
@@ -120,7 +138,7 @@ const MSG_ACTION_TYPES = {
 }
 
 const getNativeAsset = (network) => {
-    return NETWORK_DETAILS[network].nativeAsset
+    return NETWORK_DETAILS[REV_NETWORK_MAPPINGS[network]].nativeAsset
 }
 
 const getNetworks = () => {
@@ -134,5 +152,7 @@ const getMsgTypes = () => {
 export default {
     getNativeAsset,
     getNetworks,
-    getMsgTypes
+    getMsgTypes,
+    REV_NETWORK_MAPPINGS,
+    NETWORK_MAPPINGS
 }

@@ -22,7 +22,7 @@ const NETWORK = {
 
     BSC: 'bsc',
     ETH2: 'eth2',
-    AVAX: '6',
+    AVAX: CONFIG_NETWORKS.avax.nid,
     BASE: 'base',
     ARBITRUM: 'arbitrum',
     OPTIMISM: 'optimism',
@@ -32,7 +32,7 @@ const NETWORK = {
     IBC_NEUTRON: 'ibc_neutron',
     IBC_INJECTIVE: 'ibc_injective',
 
-    SUI: '21',
+    SUI: CONFIG_NETWORKS.sui.nid,
     STELLAR: 'stellar',
     SOLANA: 'solana'
 }
