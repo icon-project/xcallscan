@@ -29,7 +29,7 @@ export default function MessageList({ data, meta, showPagination }) {
                                 </div>
                                 <div className="table-cell align-middle px-1 py-1 xl:px-3 xl:py-3">{Render.renderDestHashLink(item, meta)}</div>
                                 <div className="table-cell align-middle px-1 py-1 xl:px-3 xl:py-3">{item.action_type}</div>
-                                <div className="table-cell align-middle px-1 py-1 xl:px-3 xl:py-3 text-right tracking-tighter">{timeAgo(item.src_block_timestamp * 1000)} ago</div>
+                                <div className="table-cell align-middle px-1 py-1 xl:px-3 xl:py-3 text-right tracking-tighter">{timeAgo(item.created_at * 1000)} ago</div>
                             </Link>
                         ))}
                     </div>

@@ -22,7 +22,7 @@ const NETWORK = {
 
     BSC: 'bsc',
     ETH2: 'eth2',
-    AVAX: 'avax',
+    AVAX: '6',
     BASE: 'base',
     ARBITRUM: 'arbitrum',
     OPTIMISM: 'optimism',
@@ -32,7 +32,7 @@ const NETWORK = {
     IBC_NEUTRON: 'ibc_neutron',
     IBC_INJECTIVE: 'ibc_injective',
 
-    SUI: 'sui',
+    SUI: '21',
     STELLAR: 'stellar',
     SOLANA: 'solana'
 }
@@ -92,7 +92,7 @@ const META_URLS = {
         [NETWORK.BASE]: USE_MAINNET ? 'https://basescan.org/tx/' : 'https://sepolia.basescan.org/tx/',
         [NETWORK.ARBITRUM]: USE_MAINNET ? 'https://arbiscan.io/tx/' : 'https://sepolia.arbiscan.io/tx/',
         [NETWORK.OPTIMISM]: USE_MAINNET ? 'https://optimistic.etherscan.io/tx/' : 'https://sepolia-optimism.etherscan.io/tx/',
-        [NETWORK.SUI]: USE_MAINNET ? 'https://suiscan.xyz/mainnet/tx/' : 'https://suiscan.xyz/testnet/tx/',
+        [NETWORK.SUI]: USE_MAINNET ? 'https://suivision.xyz/txblock/' : 'https://testnet.suivision.xyz/txblock/',
         [NETWORK.POLYGON]: USE_MAINNET ? 'https://polygonscan.com/tx/' : 'https://amoy.polygonscan.com/tx/',
         [NETWORK.STELLAR]: USE_MAINNET ? 'https://stellar.expert/explorer/public/tx/' : 'https://stellar.expert/explorer/testnet/tx/',
         [NETWORK.SOLANA]: USE_MAINNET ? 'https://explorer.solana.com/tx/{txHash}' : 'https://explorer.solana.com/tx/{txHash}?cluster=testnet'

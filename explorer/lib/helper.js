@@ -6,11 +6,11 @@ const NETWORK = {
     IBC_ARCHWAY: 'ibc_archway',
     IBC_NEUTRON: 'ibc_neutron',
     IBC_INJECTIVE: 'ibc_injective',
-    AVAX: 'avax',
+    AVAX: '6',
     BASE: 'base',
     ARBITRUM: 'arbitrum',
     OPTIMISM: 'optimism',
-    SUI: 'sui',
+    SUI: '21',
     POLYGON: 'polygon',
     STELLAR: 'stellar',
     SOLANA: 'solana'
