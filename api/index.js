@@ -18,9 +18,12 @@ app.use(
 
 const defaultAllowedOrigins = [
     'http://localhost:3000',
+    'http://localhost:80',
+    'http://localhost',
     'http://localhost:3100',
     'http://3.95.20.254:3100',
     'http://3.95.20.254:3000',
+    'http://18.220.104.29:80',
     'http://icongmp-testnet.icon.community',
     'https://icongmp-testnet.icon.community',
     'http://icongmp-mainnet.icon.community',

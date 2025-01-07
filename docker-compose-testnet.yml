@@ -1,4 +1,14 @@
 services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
+    sysctls:
+      net.ipv4.ip_local_port_range: "10240 65535"
   xcallscan-testnet:
     build:
       context: ./
