@@ -20,6 +20,7 @@ const NETWORK = {
  
     AVAX: CONFIG_NETWORKS.avax.nid,
     SUI: CONFIG_NETWORKS.sui.nid,
+    NEAR: CONFIG_NETWORKS.near.nid,
    
 }
 
@@ -64,7 +65,8 @@ const META_URLS = {
         [NETWORK.SUI]: USE_MAINNET ? 'https://suivision.xyz/txblock/' : 'https://testnet.suivision.xyz/txblock/',
         [NETWORK.POLYGON]: USE_MAINNET ? 'https://polygonscan.com/tx/' : 'https://amoy.polygonscan.com/tx/',
         [NETWORK.STELLAR]: USE_MAINNET ? 'https://stellar.expert/explorer/public/tx/' : 'https://stellar.expert/explorer/testnet/tx/',
-        [NETWORK.SOLANA]: USE_MAINNET ? 'https://explorer.solana.com/tx/{txHash}' : 'https://explorer.solana.com/tx/{txHash}?cluster=testnet'
+        [NETWORK.SOLANA]: USE_MAINNET ? 'https://explorer.solana.com/tx/{txHash}' : 'https://explorer.solana.com/tx/{txHash}?cluster=testnet',
+        [NETWORK.NEAR]: USE_MAINNET ? 'https://nearblocks.io/txns/' : 'https://testnet.nearblocks.io/txns/',
     }
 }
 

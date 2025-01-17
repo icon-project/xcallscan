@@ -7,16 +7,19 @@ const CONFIG_NETWORKS = USE_MAINNET ? MainnetDeployment.networks : TestnetDeploy
 const NETWORK = {
     AVAX: 'avax',
     SUI: 'sui',
+    NEAR: 'near',
 }
 
 const NETWORK_MAPPINGS = {
     [NETWORK.SUI]: CONFIG_NETWORKS.sui.nid,
     [NETWORK.AVAX]: CONFIG_NETWORKS.avax.nid,
+    [NETWORK.NEAR]: CONFIG_NETWORKS.near.nid,
 }
 
 const REV_NETWORK_MAPPINGS = {
     [CONFIG_NETWORKS.sui.nid]: [NETWORK.SUI],
     [CONFIG_NETWORKS.avax.nid]: [NETWORK.AVAX],
+    [CONFIG_NETWORKS.near.nid]: [NETWORK.NEAR],
 }
 
 const NETWORK_DETAILS = {
@@ -31,6 +34,12 @@ const NETWORK_DETAILS = {
         name: 'Sui',
         logo: `/images/network-sui.png`,
         nativeAsset: 'SUI',
+    },
+    [NETWORK.NEAR]: {
+        id: NETWORK.NEAR,
+        name: 'Near',
+        logo: `/images/network-near.png`,
+        nativeAsset: 'NEAR',
     },
 }
 
