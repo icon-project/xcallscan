@@ -8,6 +8,7 @@ const NETWORK = {
     AVAX: 'avax',
     SUI: 'sui',
     NEAR: 'near',
+    SONIC: 'sonic',
 }
 
 const NETWORK_MAPPINGS = {
