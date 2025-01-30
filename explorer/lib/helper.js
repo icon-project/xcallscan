@@ -9,6 +9,7 @@ const NETWORK = {
     SUI: 'sui',
     NEAR: 'near',
     SONIC: 'sonic',
+    ICON: 'icon',
 }
 
 const NETWORK_MAPPINGS = {
@@ -16,6 +17,7 @@ const NETWORK_MAPPINGS = {
     [NETWORK.AVAX]: CONFIG_NETWORKS.avax.nid,
     [NETWORK.NEAR]: CONFIG_NETWORKS.near.nid,
     [NETWORK.SONIC]: CONFIG_NETWORKS.sonic.nid,
+    [NETWORK.ICON]: CONFIG_NETWORKS.icon.nid,
 }
 
 const REV_NETWORK_MAPPINGS = {
@@ -23,6 +25,7 @@ const REV_NETWORK_MAPPINGS = {
     [CONFIG_NETWORKS.avax.nid]: [NETWORK.AVAX],
     [CONFIG_NETWORKS.near.nid]: [NETWORK.NEAR],
     [CONFIG_NETWORKS.sonic.nid]: [NETWORK.SONIC],
+    [CONFIG_NETWORKS.icon.nid]: [NETWORK.ICON],
 }
 
 const NETWORK_DETAILS = {
@@ -49,6 +52,12 @@ const NETWORK_DETAILS = {
         name: 'Sonic',
         logo: `/images/network-sonic.png`,
         nativeAsset: 'Sonic',
+    },
+    [NETWORK.ICON]: {
+        id: NETWORK.ICON,
+        name: 'Icon',
+        logo: `/images/network-icon.png`,
+        nativeAsset: 'ICX',
     },
 }
 

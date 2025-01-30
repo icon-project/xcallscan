@@ -22,6 +22,7 @@ const NETWORK = {
     SUI: CONFIG_NETWORKS.sui.nid,
     NEAR: CONFIG_NETWORKS.near.nid,
     SONIC: CONFIG_NETWORKS.sonic.nid,
+    ICON: CONFIG_NETWORKS.icon.nid,
 
 }
 
