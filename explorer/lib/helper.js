@@ -65,7 +65,7 @@ const NETWORK_DETAILS = {
     [NETWORK.INJECTIVE]: {
         id: NETWORK.INJECTIVE,
         name: 'Injective',
-        logo: `/images/network-ibc_injective.png`,
+        logo: `/images/network-injective.png`,
         nativeAsset: 'INJ',
     },
 }
