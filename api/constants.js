@@ -23,6 +23,7 @@ const NETWORK = {
     NEAR: CONFIG_NETWORKS.near.nid,
     SONIC: CONFIG_NETWORKS.sonic.nid,
     ICON: CONFIG_NETWORKS.icon.nid,
+    INJECTIVE: CONFIG_NETWORKS.injective.nid,
 
 }
 
@@ -70,6 +71,9 @@ const META_URLS = {
         [NETWORK.SOLANA]: USE_MAINNET ? 'https://explorer.solana.com/tx/{txHash}' : 'https://explorer.solana.com/tx/{txHash}?cluster=testnet',
         [NETWORK.NEAR]: USE_MAINNET ? 'https://nearblocks.io/txns/' : 'https://testnet.nearblocks.io/txns/',
         [NETWORK.SONIC]: USE_MAINNET ? 'https://sonicscan.org/tx/' : 'https://testnet.sonicscan.org/tx/',
+        [NETWORK.INJECTIVE]: USE_MAINNET
+            ? 'https://explorer.injective.network/transaction/'
+            : 'https://testnet.explorer.injective.network/transaction/',
     }
 }
 

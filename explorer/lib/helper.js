@@ -10,6 +10,7 @@ const NETWORK = {
     NEAR: 'near',
     SONIC: 'sonic',
     ICON: 'icon',
+    INJECTIVE: 'injective',
 }
 
 const NETWORK_MAPPINGS = {
@@ -18,6 +19,7 @@ const NETWORK_MAPPINGS = {
     [NETWORK.NEAR]: CONFIG_NETWORKS.near.nid,
     [NETWORK.SONIC]: CONFIG_NETWORKS.sonic.nid,
     [NETWORK.ICON]: CONFIG_NETWORKS.icon.nid,
+    [NETWORK.INJECTIVE]: CONFIG_NETWORKS.injective.nid,
 }
 
 const REV_NETWORK_MAPPINGS = {
@@ -26,6 +28,7 @@ const REV_NETWORK_MAPPINGS = {
     [CONFIG_NETWORKS.near.nid]: [NETWORK.NEAR],
     [CONFIG_NETWORKS.sonic.nid]: [NETWORK.SONIC],
     [CONFIG_NETWORKS.icon.nid]: [NETWORK.ICON],
+    [CONFIG_NETWORKS.injective.nid]: [NETWORK.INJECTIVE],
 }
 
 const NETWORK_DETAILS = {
@@ -58,6 +61,12 @@ const NETWORK_DETAILS = {
         name: 'Icon',
         logo: `/images/network-icon.png`,
         nativeAsset: 'ICX',
+    },
+    [NETWORK.INJECTIVE]: {
+        id: NETWORK.INJECTIVE,
+        name: 'Injective',
+        logo: `/images/network-ibc_injective.png`,
+        nativeAsset: 'INJ',
     },
 }
 
