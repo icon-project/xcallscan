@@ -38,7 +38,7 @@ function renderDestHashLink(item, meta) {
         link = <div className={linkClass}>{item.dest_tx_hash}</div>
     } else {
         networkImg = <Image alt={item.dest_network} src={`/images/network-${helper.REV_NETWORK_MAPPINGS[item.dest_network]}.png`} width={24} height={24} className="rounded-full bg-transparent" />
-        link = <div>-</div>
+        link = <div></div>
     }
 
     return (
