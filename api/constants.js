@@ -24,6 +24,7 @@ const NETWORK = {
     SONIC: CONFIG_NETWORKS.sonic.nid,
     ICON: CONFIG_NETWORKS.icon.nid,
     INJECTIVE: CONFIG_NETWORKS.injective.nid,
+    STELLAR: CONFIG_NETWORKS.stellar.nid,
 
 }
 

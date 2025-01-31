@@ -17,6 +17,9 @@
         },
         "injective": {
             "nid": "19"
+        },
+        "stellar": {
+            "nid": "27"
         }
     }
 }

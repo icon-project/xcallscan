@@ -11,6 +11,7 @@ const NETWORK = {
     SONIC: 'sonic',
     ICON: 'icon',
     INJECTIVE: 'injective',
+    STELLAR: 'stellar',
 }
 
 const NETWORK_MAPPINGS = {
@@ -20,6 +21,7 @@ const NETWORK_MAPPINGS = {
     [NETWORK.SONIC]: CONFIG_NETWORKS.sonic.nid,
     [NETWORK.ICON]: CONFIG_NETWORKS.icon.nid,
     [NETWORK.INJECTIVE]: CONFIG_NETWORKS.injective.nid,
+    [NETWORK.STELLAR]: CONFIG_NETWORKS.stellar.nid,
 }
 
 const REV_NETWORK_MAPPINGS = {
@@ -29,6 +31,7 @@ const REV_NETWORK_MAPPINGS = {
     [CONFIG_NETWORKS.sonic.nid]: [NETWORK.SONIC],
     [CONFIG_NETWORKS.icon.nid]: [NETWORK.ICON],
     [CONFIG_NETWORKS.injective.nid]: [NETWORK.INJECTIVE],
+    [CONFIG_NETWORKS.stellar.nid]: [NETWORK.STELLAR],
 }
 
 const NETWORK_DETAILS = {
@@ -67,6 +70,12 @@ const NETWORK_DETAILS = {
         name: 'Injective',
         logo: `/images/network-injective.png`,
         nativeAsset: 'INJ',
+    },
+    [NETWORK.STELLAR]: {
+        id: NETWORK.STELLAR,
+        name: 'stellar',
+        logo: `/images/network-stellar.png`,
+        nativeAsset: 'XLM',
     },
 }
 
