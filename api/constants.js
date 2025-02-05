@@ -25,6 +25,7 @@ const NETWORK = {
     ICON: CONFIG_NETWORKS.icon.nid,
     INJECTIVE: CONFIG_NETWORKS.injective.nid,
     STELLAR: CONFIG_NETWORKS.stellar.nid,
+    SOLANA: CONFIG_NETWORKS.solana.nid,
 
 }
 
@@ -69,7 +70,7 @@ const META_URLS = {
         [NETWORK.SUI]: USE_MAINNET ? 'https://suivision.xyz/txblock/' : 'https://testnet.suivision.xyz/txblock/',
         [NETWORK.POLYGON]: USE_MAINNET ? 'https://polygonscan.com/tx/' : 'https://amoy.polygonscan.com/tx/',
         [NETWORK.STELLAR]: USE_MAINNET ? 'https://stellar.expert/explorer/public/tx/' : 'https://stellar.expert/explorer/testnet/tx/',
-        [NETWORK.SOLANA]: USE_MAINNET ? 'https://explorer.solana.com/tx/{txHash}' : 'https://explorer.solana.com/tx/{txHash}?cluster=testnet',
+        [NETWORK.SOLANA]: USE_MAINNET ? 'https://solscan.io/tx/{txHash}' : 'https://solscan.io/tx/{txHash}?cluster=devnet',
         [NETWORK.NEAR]: USE_MAINNET ? 'https://nearblocks.io/txns/' : 'https://testnet.nearblocks.io/txns/',
         [NETWORK.SONIC]: USE_MAINNET ? 'https://sonicscan.org/tx/' : 'https://testnet.sonicscan.org/tx/',
         [NETWORK.INJECTIVE]: USE_MAINNET

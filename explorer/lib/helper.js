@@ -12,6 +12,7 @@ const NETWORK = {
     ICON: 'icon',
     INJECTIVE: 'injective',
     STELLAR: 'stellar',
+    SOLANA: 'solana',
 }
 
 const NETWORK_MAPPINGS = {
@@ -22,6 +23,7 @@ const NETWORK_MAPPINGS = {
     [NETWORK.ICON]: CONFIG_NETWORKS.icon.nid,
     [NETWORK.INJECTIVE]: CONFIG_NETWORKS.injective.nid,
     [NETWORK.STELLAR]: CONFIG_NETWORKS.stellar.nid,
+    [NETWORK.SOLANA]: CONFIG_NETWORKS.solana.nid,
 }
 
 const REV_NETWORK_MAPPINGS = {
@@ -32,6 +34,7 @@ const REV_NETWORK_MAPPINGS = {
     [CONFIG_NETWORKS.icon.nid]: [NETWORK.ICON],
     [CONFIG_NETWORKS.injective.nid]: [NETWORK.INJECTIVE],
     [CONFIG_NETWORKS.stellar.nid]: [NETWORK.STELLAR],
+    [CONFIG_NETWORKS.solana.nid]: [NETWORK.SOLANA],
 }
 
 const NETWORK_DETAILS = {
@@ -76,6 +79,12 @@ const NETWORK_DETAILS = {
         name: 'stellar',
         logo: `/images/network-stellar.png`,
         nativeAsset: 'XLM',
+    },
+    [NETWORK.SOLANA]: {
+        id: NETWORK.SOLANA,
+        name: 'solana',
+        logo: `/images/network-solana.png`,
+        nativeAsset: 'SOL',
     },
 }
 
