@@ -13,6 +13,7 @@ const NETWORK = {
     INJECTIVE: 'injective',
     STELLAR: 'stellar',
     SOLANA: 'solana',
+    ARCHWAY: 'archway',
 }
 
 const NETWORK_MAPPINGS = {
@@ -24,6 +25,7 @@ const NETWORK_MAPPINGS = {
     [NETWORK.INJECTIVE]: CONFIG_NETWORKS.injective.nid,
     [NETWORK.STELLAR]: CONFIG_NETWORKS.stellar.nid,
     [NETWORK.SOLANA]: CONFIG_NETWORKS.solana.nid,
+    [NETWORK.ARCHWAY]: CONFIG_NETWORKS.archway.nid,
 }
 
 const REV_NETWORK_MAPPINGS = {
@@ -35,6 +37,7 @@ const REV_NETWORK_MAPPINGS = {
     [CONFIG_NETWORKS.injective.nid]: [NETWORK.INJECTIVE],
     [CONFIG_NETWORKS.stellar.nid]: [NETWORK.STELLAR],
     [CONFIG_NETWORKS.solana.nid]: [NETWORK.SOLANA],
+    [CONFIG_NETWORKS.archway.nid]: [NETWORK.ARCHWAY],
 }
 
 const NETWORK_DETAILS = {
@@ -85,6 +88,12 @@ const NETWORK_DETAILS = {
         name: 'solana',
         logo: `/images/network-solana.png`,
         nativeAsset: 'SOL',
+    },
+    [NETWORK.ARCHWAY]: {
+        id: NETWORK.ARCHWAY,
+        name: 'archway',
+        logo: `/images/network-archway.png`,
+        nativeAsset: 'const',
     },
 }
 

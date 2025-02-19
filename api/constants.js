@@ -26,6 +26,7 @@ const NETWORK = {
     INJECTIVE: CONFIG_NETWORKS.injective.nid,
     STELLAR: CONFIG_NETWORKS.stellar.nid,
     SOLANA: CONFIG_NETWORKS.solana.nid,
+    ARCHWAY: CONFIG_NETWORKS.archway.nid,
 
 }
 
@@ -76,6 +77,7 @@ const META_URLS = {
         [NETWORK.INJECTIVE]: USE_MAINNET
             ? 'https://explorer.injective.network/transaction/'
             : 'https://testnet.explorer.injective.network/transaction/',
+        [NETWORK.ARCHWAY]: USE_MAINNET ? 'https://mintscan.io/archway/txs/' : 'https://testnet.mintscan.io/archway-testnet/txs/',
     }
 }
 
