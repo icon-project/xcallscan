@@ -77,7 +77,7 @@ const META_URLS = {
         [NETWORK.INJECTIVE]: USE_MAINNET
             ? 'https://explorer.injective.network/transaction/'
             : 'https://testnet.explorer.injective.network/transaction/',
-        [NETWORK.ARCHWAY]: USE_MAINNET ? 'https://mintscan.io/archway/txs/' : 'https://testnet.mintscan.io/archway-testnet/txs/',
+        [NETWORK.ARCHWAY]: USE_MAINNET ? 'https://mintscan.io/archway/txs/' : 'https://www.mintscan.io/archway-testnet/tx/',
     }
 }
 
