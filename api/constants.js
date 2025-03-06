@@ -27,6 +27,7 @@ const NETWORK = {
     STELLAR: CONFIG_NETWORKS.stellar.nid,
     SOLANA: CONFIG_NETWORKS.solana.nid,
     ARCHWAY: CONFIG_NETWORKS.archway.nid,
+    STACKS: CONFIG_NETWORKS.stacks.nid,
 
 }
 
@@ -78,6 +79,7 @@ const META_URLS = {
             ? 'https://explorer.injective.network/transaction/'
             : 'https://testnet.explorer.injective.network/transaction/',
         [NETWORK.ARCHWAY]: USE_MAINNET ? 'https://mintscan.io/archway/txs/' : 'https://www.mintscan.io/archway-testnet/tx/',
+        [NETWORK.STACKS]: USE_MAINNET ? 'https://explorer.hiro.so/txid/{txHash}?chain=mainnet' : 'https://explorer.hiro.so/txid/{txHash}?chain=testnet',
     }
 }
 

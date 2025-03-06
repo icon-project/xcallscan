@@ -58,7 +58,10 @@ function renderHashLink(scanUrl, network, hash, isFull = false) {
     let copyButton = <ClipboardDocumentIcon width={20} height={20} className={'opacity-75 text-gray-900 cursor-pointer ml-2'} />
 
     scanUrl = scanUrl ? scanUrl.replace(/\/+$/, '') : ''
-    let href = network == '1' ? scanUrl.replace('{txHash}', hash) : `${scanUrl}/${hash}`
+    let href = `${scanUrl}/${hash}`
+    if (network == '1' || network == '10002') {
+        href = scanUrl.replace('{txHash}', hash)
+    }
     networkImg = <Image alt={network} src={`/images/network-${helper.REV_NETWORK_MAPPINGS[network]}.png`} width={24} height={24} className="rounded-full bg-transparent" />
     link = !isFull ? (
         <div className={linkClass}>{hash}</div>
