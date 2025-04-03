@@ -28,6 +28,11 @@ const NETWORK = {
     SOLANA: CONFIG_NETWORKS.solana.nid,
     ARCHWAY: CONFIG_NETWORKS.archway.nid,
     STACKS: CONFIG_NETWORKS.stacks.nid,
+    BASE: CONFIG_NETWORKS.base.nid,
+    ARBITRUM: CONFIG_NETWORKS.arbitrum.nid,
+    OPTIMISM: CONFIG_NETWORKS.optimism.nid,
+    POLYGON: CONFIG_NETWORKS.polygon.nid,
+    BSC: CONFIG_NETWORKS.bsc.nid
 
 }
 

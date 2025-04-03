@@ -29,6 +29,22 @@
         },
         "stacks":{
             "nid":"10002"
+        },
+        "base":{
+            "nid":"30"
+        },
+        "optimism":{
+            "nid":"24"
+        },
+        "polygon":{
+            "nid":"5"
+        },
+        "arbitrum":{
+            "nid":"23"
+        },
+        "bsc":{
+            "nid":"4"
         }
+
     }
 }

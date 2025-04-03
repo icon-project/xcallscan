@@ -15,6 +15,11 @@ const NETWORK = {
     SOLANA: 'solana',
     ARCHWAY: 'archway',
     STACKS: 'stacks',
+    BASE: 'base',
+    OPTIMISM: 'optimism',
+    POLYGON: 'polygon',
+    ARBITRUM: 'arbitrum',
+    BSC: 'bsc'
 }
 
 const NETWORK_MAPPINGS = {
@@ -28,6 +33,11 @@ const NETWORK_MAPPINGS = {
     [NETWORK.SOLANA]: CONFIG_NETWORKS.solana.nid,
     [NETWORK.ARCHWAY]: CONFIG_NETWORKS.archway.nid,
     [NETWORK.STACKS]: CONFIG_NETWORKS.stacks.nid,
+    [NETWORK.BASE]: CONFIG_NETWORKS.base.nid,
+    [NETWORK.OPTIMISM]: CONFIG_NETWORKS.optimism.nid,
+    [NETWORK.POLYGON]: CONFIG_NETWORKS.polygon.nid,
+    [NETWORK.ARBITRUM]: CONFIG_NETWORKS.arbitrum.nid,
+    [NETWORK.BSC]: CONFIG_NETWORKS.bsc.nid,
 }
 
 const REV_NETWORK_MAPPINGS = {
@@ -41,6 +51,11 @@ const REV_NETWORK_MAPPINGS = {
     [CONFIG_NETWORKS.solana.nid]: [NETWORK.SOLANA],
     [CONFIG_NETWORKS.archway.nid]: [NETWORK.ARCHWAY],
     [CONFIG_NETWORKS.stacks.nid]: [NETWORK.STACKS],
+    [CONFIG_NETWORKS.base.nid]: [NETWORK.BASE],
+    [CONFIG_NETWORKS.optimism.nid]: [NETWORK.OPTIMISM],
+    [CONFIG_NETWORKS.polygon.nid]: [NETWORK.POLYGON],
+    [CONFIG_NETWORKS.arbitrum.nid]: [NETWORK.ARBITRUM],
+    [CONFIG_NETWORKS.bsc.nid]: [NETWORK.BSC],
 }
 
 const NETWORK_DETAILS = {
@@ -103,6 +118,36 @@ const NETWORK_DETAILS = {
         name: 'stacks',
         logo: `/images/network-stacks.png`,
         nativeAsset: 'STX',
+    },
+    [NETWORK.BASE]: {
+        id: NETWORK.BASE,
+        name: 'base',
+        logo: `/images/network-base.png`,
+        nativeAsset: 'ETH',
+    },
+    [NETWORK.ARBITRUM]: {
+        id: NETWORK.ARBITRUM,
+        name: 'arbitrum',
+        logo: `/images/network-arbitrum.png`,
+        nativeAsset: 'ETH',
+    },
+    [NETWORK.POLYGON]: {
+        id: NETWORK.POLYGON,
+        name: 'polygon',
+        logo: `/images/network-polygon.png`,
+        nativeAsset: 'POL',
+    },
+    [NETWORK.OPTIMISM]: {
+        id: NETWORK.OPTIMISM,
+        name: 'optimism',
+        logo: `/images/network-optimism.png`,
+        nativeAsset: 'ETH',
+    },
+    [NETWORK.BSC]: {
+        id: NETWORK.BSC,
+        name: 'bsc',
+        logo: `/images/network-bsc.png`,
+        nativeAsset: 'ETH',
     },
 }
 
