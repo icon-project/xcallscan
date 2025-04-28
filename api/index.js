@@ -18,11 +18,14 @@ app.use(
 
 const defaultAllowedOrigins = [
     'http://localhost:3000',
+    'http://localhost:80',
+    'http://localhost',
     'http://localhost:3100',
     'http://3.95.20.254:3100',
     'http://3.95.20.254:3000',
-    'http://icongmp-testnet.icon.community',
-    'https://icongmp-testnet.icon.community',
+    'http://18.220.104.29:80',
+    'http://xcall-scan.nw.iconblockchain.xyz',
+    'https://xcall-scan.nw.iconblockchain.xyz',
     'http://icongmp-mainnet.icon.community',
     'https://icongmp-mainnet.icon.community',
     'http://testnet.xcallscan.xyz',

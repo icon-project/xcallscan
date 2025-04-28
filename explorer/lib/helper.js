@@ -1,115 +1,154 @@
+
+const TestnetDeployment = require('../configs/testnet_deployment.json')
+const MainnetDeployment = require('../configs/mainnet_deployment.json')
+const USE_MAINNET = process.env.USE_MAINNET == 'true'
+const CONFIG_NETWORKS = USE_MAINNET ? MainnetDeployment.networks : TestnetDeployment.networks
+
 const NETWORK = {
-    ICON: 'icon',
-    BSC: 'bsc',
-    ETH2: 'eth2',
-    HAVAH: 'havah',
-    IBC_ARCHWAY: 'ibc_archway',
-    IBC_NEUTRON: 'ibc_neutron',
-    IBC_INJECTIVE: 'ibc_injective',
     AVAX: 'avax',
-    BASE: 'base',
-    ARBITRUM: 'arbitrum',
-    OPTIMISM: 'optimism',
     SUI: 'sui',
-    POLYGON: 'polygon',
+    NEAR: 'near',
+    SONIC: 'sonic',
+    ICON: 'icon',
+    INJECTIVE: 'injective',
     STELLAR: 'stellar',
-    SOLANA: 'solana'
+    SOLANA: 'solana',
+    ARCHWAY: 'archway',
+    STACKS: 'stacks',
+    BASE: 'base',
+    OPTIMISM: 'optimism',
+    POLYGON: 'polygon',
+    ARBITRUM: 'arbitrum',
+    BSC: 'bsc'
+}
+
+const NETWORK_MAPPINGS = {
+    [NETWORK.SUI]: CONFIG_NETWORKS.sui.nid,
+    [NETWORK.AVAX]: CONFIG_NETWORKS.avax.nid,
+    [NETWORK.NEAR]: CONFIG_NETWORKS.near.nid,
+    [NETWORK.SONIC]: CONFIG_NETWORKS.sonic.nid,
+    [NETWORK.ICON]: CONFIG_NETWORKS.icon.nid,
+    [NETWORK.INJECTIVE]: CONFIG_NETWORKS.injective.nid,
+    [NETWORK.STELLAR]: CONFIG_NETWORKS.stellar.nid,
+    [NETWORK.SOLANA]: CONFIG_NETWORKS.solana.nid,
+    [NETWORK.ARCHWAY]: CONFIG_NETWORKS.archway.nid,
+    [NETWORK.STACKS]: CONFIG_NETWORKS.stacks.nid,
+    [NETWORK.BASE]: CONFIG_NETWORKS.base.nid,
+    [NETWORK.OPTIMISM]: CONFIG_NETWORKS.optimism.nid,
+    [NETWORK.POLYGON]: CONFIG_NETWORKS.polygon.nid,
+    [NETWORK.ARBITRUM]: CONFIG_NETWORKS.arbitrum.nid,
+    [NETWORK.BSC]: CONFIG_NETWORKS.bsc.nid,
+}
+
+const REV_NETWORK_MAPPINGS = {
+    [CONFIG_NETWORKS.sui.nid]: [NETWORK.SUI],
+    [CONFIG_NETWORKS.avax.nid]: [NETWORK.AVAX],
+    [CONFIG_NETWORKS.near.nid]: [NETWORK.NEAR],
+    [CONFIG_NETWORKS.sonic.nid]: [NETWORK.SONIC],
+    [CONFIG_NETWORKS.icon.nid]: [NETWORK.ICON],
+    [CONFIG_NETWORKS.injective.nid]: [NETWORK.INJECTIVE],
+    [CONFIG_NETWORKS.stellar.nid]: [NETWORK.STELLAR],
+    [CONFIG_NETWORKS.solana.nid]: [NETWORK.SOLANA],
+    [CONFIG_NETWORKS.archway.nid]: [NETWORK.ARCHWAY],
+    [CONFIG_NETWORKS.stacks.nid]: [NETWORK.STACKS],
+    [CONFIG_NETWORKS.base.nid]: [NETWORK.BASE],
+    [CONFIG_NETWORKS.optimism.nid]: [NETWORK.OPTIMISM],
+    [CONFIG_NETWORKS.polygon.nid]: [NETWORK.POLYGON],
+    [CONFIG_NETWORKS.arbitrum.nid]: [NETWORK.ARBITRUM],
+    [CONFIG_NETWORKS.bsc.nid]: [NETWORK.BSC],
 }
 
 const NETWORK_DETAILS = {
-    [NETWORK.ICON]: {
-        id: NETWORK.ICON,
-        name: 'Icon',
-        logo: `/images/network-${NETWORK.ICON}.png`,
-        nativeAsset: 'ICX'
-    },
-    [NETWORK.HAVAH]: {
-        id: NETWORK.HAVAH,
-        name: 'Havah',
-        logo: `/images/network-${NETWORK.HAVAH}.png`,
-        nativeAsset: 'HVH'
-    },
-
-    [NETWORK.ETH2]: {
-        id: NETWORK.ETH2,
-        name: 'Ethereum',
-        logo: `/images/network-${NETWORK.ETH2}.png`,
-        nativeAsset: 'ETH'
-    },
-    [NETWORK.BSC]: {
-        id: NETWORK.BSC,
-        name: 'Bsc',
-        logo: `/images/network-${NETWORK.BSC}.png`,
-        nativeAsset: 'BNB'
-    },
     [NETWORK.AVAX]: {
         id: NETWORK.AVAX,
         name: 'Avax',
-        logo: `/images/network-${NETWORK.AVAX}.png`,
-        nativeAsset: 'AVAX'
+        logo: `/images/network-avax.png`,
+        nativeAsset: 'AVAX',
     },
-    [NETWORK.BASE]: {
-        id: NETWORK.BASE,
-        name: 'Base',
-        logo: `/images/network-${NETWORK.BASE}.png`,
-        nativeAsset: 'ETH'
-    },
-    [NETWORK.ARBITRUM]: {
-        id: NETWORK.ARBITRUM,
-        name: 'Arbitrum',
-        logo: `/images/network-${NETWORK.ARBITRUM}.png`,
-        nativeAsset: 'ETH'
-    },
-    [NETWORK.OPTIMISM]: {
-        id: NETWORK.OPTIMISM,
-        name: 'Optimism',
-        logo: `/images/network-${NETWORK.OPTIMISM}.png`,
-        nativeAsset: 'ETH'
-    },
-    [NETWORK.POLYGON]: {
-        id: NETWORK.POLYGON,
-        name: 'Polygon',
-        logo: `/images/network-${NETWORK.POLYGON}.png`,
-        nativeAsset: 'MATIC'
-    },
-
-    [NETWORK.IBC_ARCHWAY]: {
-        id: NETWORK.IBC_ARCHWAY,
-        name: 'Archway',
-        logo: `/images/network-${NETWORK.IBC_ARCHWAY}.png`,
-        nativeAsset: 'ARCH'
-    },
-    [NETWORK.IBC_NEUTRON]: {
-        id: NETWORK.IBC_NEUTRON,
-        name: 'Neutron',
-        logo: `/images/network-${NETWORK.IBC_NEUTRON}.png`,
-        nativeAsset: 'NTRN'
-    },
-    [NETWORK.IBC_INJECTIVE]: {
-        id: NETWORK.IBC_INJECTIVE,
-        name: 'Injective',
-        logo: `/images/network-${NETWORK.IBC_INJECTIVE}.png`,
-        nativeAsset: 'INJ'
-    },
-
     [NETWORK.SUI]: {
         id: NETWORK.SUI,
         name: 'Sui',
-        logo: `/images/network-${NETWORK.SUI}.png`,
-        nativeAsset: 'SUI'
+        logo: `/images/network-sui.png`,
+        nativeAsset: 'SUI',
+    },
+    [NETWORK.NEAR]: {
+        id: NETWORK.NEAR,
+        name: 'Near',
+        logo: `/images/network-near.png`,
+        nativeAsset: 'NEAR',
+    },
+    [NETWORK.SONIC]: {
+        id: NETWORK.SONIC,
+        name: 'Sonic',
+        logo: `/images/network-sonic.png`,
+        nativeAsset: 'Sonic',
+    },
+    [NETWORK.ICON]: {
+        id: NETWORK.ICON,
+        name: 'Icon',
+        logo: `/images/network-icon.png`,
+        nativeAsset: 'ICX',
+    },
+    [NETWORK.INJECTIVE]: {
+        id: NETWORK.INJECTIVE,
+        name: 'Injective',
+        logo: `/images/network-injective.png`,
+        nativeAsset: 'INJ',
     },
     [NETWORK.STELLAR]: {
         id: NETWORK.STELLAR,
-        name: 'Stellar',
-        logo: `/images/network-${NETWORK.STELLAR}.png`,
-        nativeAsset: 'XLM'
+        name: 'stellar',
+        logo: `/images/network-stellar.png`,
+        nativeAsset: 'XLM',
     },
     [NETWORK.SOLANA]: {
         id: NETWORK.SOLANA,
-        name: 'Solana',
-        logo: `/images/network-${NETWORK.SOLANA}.png`,
-        nativeAsset: 'SOL'
-    }
+        name: 'solana',
+        logo: `/images/network-solana.png`,
+        nativeAsset: 'SOL',
+    },
+    [NETWORK.ARCHWAY]: {
+        id: NETWORK.ARCHWAY,
+        name: 'archway',
+        logo: `/images/network-archway.png`,
+        nativeAsset: 'const',
+    },
+    [NETWORK.STACKS]: {
+        id: NETWORK.STACKS,
+        name: 'stacks',
+        logo: `/images/network-stacks.png`,
+        nativeAsset: 'STX',
+    },
+    [NETWORK.BASE]: {
+        id: NETWORK.BASE,
+        name: 'base',
+        logo: `/images/network-base.png`,
+        nativeAsset: 'ETH',
+    },
+    [NETWORK.ARBITRUM]: {
+        id: NETWORK.ARBITRUM,
+        name: 'arbitrum',
+        logo: `/images/network-arbitrum.png`,
+        nativeAsset: 'ETH',
+    },
+    [NETWORK.POLYGON]: {
+        id: NETWORK.POLYGON,
+        name: 'polygon',
+        logo: `/images/network-polygon.png`,
+        nativeAsset: 'POL',
+    },
+    [NETWORK.OPTIMISM]: {
+        id: NETWORK.OPTIMISM,
+        name: 'optimism',
+        logo: `/images/network-optimism.png`,
+        nativeAsset: 'ETH',
+    },
+    [NETWORK.BSC]: {
+        id: NETWORK.BSC,
+        name: 'bsc',
+        logo: `/images/network-bsc.png`,
+        nativeAsset: 'ETH',
+    },
 }
 
 const MSG_ACTION_TYPES = {
@@ -120,7 +159,7 @@ const MSG_ACTION_TYPES = {
 }
 
 const getNativeAsset = (network) => {
-    return NETWORK_DETAILS[network].nativeAsset
+    return NETWORK_DETAILS[REV_NETWORK_MAPPINGS[network]].nativeAsset
 }
 
 const getNetworks = () => {
@@ -134,5 +173,7 @@ const getMsgTypes = () => {
 export default {
     getNativeAsset,
     getNetworks,
-    getMsgTypes
+    getMsgTypes,
+    REV_NETWORK_MAPPINGS,
+    NETWORK_MAPPINGS
 }

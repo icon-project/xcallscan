@@ -9,7 +9,8 @@ const pool = new Pool({
     host: process.env.PGHOST,
     database: process.env.PGDATABASE,
     password: process.env.PGPASSWORD,
-    port: process.env.PGPORT
+    port: process.env.PGPORT,
+    ssl: { rejectUnauthorized: false }
 })
 pool.on('error', function (error, client) {
     logger.error(error)
@@ -74,15 +75,15 @@ const getMessages = async (skip, limit, status, src_network, dest_network, src_a
     const selectFields = ` id, sn, status, src_network, src_block_number, src_block_timestamp, src_tx_hash, src_app as src_address, src_error, 
                                 dest_network, dest_block_number, dest_block_timestamp, dest_tx_hash, dest_app as dest_address, dest_error, 
                                 response_block_number, response_block_timestamp, response_tx_hash, response_error, 
-                                rollback_block_number, rollback_block_timestamp, rollback_tx_hash, rollback_error, action_type, created_at `
+                                rollback_block_number, rollback_block_timestamp, rollback_tx_hash, rollback_error, action_type, created_at,updated_at `
     let sqlMessages = `SELECT ${selectFields} 
-                        FROM messages ORDER BY src_block_timestamp DESC OFFSET $1 LIMIT $2`
+                        FROM messages ORDER BY created_at DESC OFFSET $1 LIMIT $2`
     if (conditions.length > 0) {
         sqlTotal = `SELECT count(*) FROM messages WHERE ${conditions.join(' AND ')} `
         sqlMessages = `SELECT ${selectFields}  
                         FROM messages 
                         WHERE ${conditions.join(' AND ')} 
-                        ORDER BY src_block_timestamp DESC 
+                        ORDER BY created_at DESC 
                         OFFSET $${conditions.length + 1} LIMIT $${conditions.length + 2}`
     }
 
@@ -147,7 +148,6 @@ const searchMessages = async (value) => {
 const getStatistic = async () => {
     const totalRs = await pool.query('SELECT count(*) FROM messages')
     const messages = Number(totalRs.rows[0].count)
-
     const fees = {}
     const networks = Object.values(NETWORK)
     for (let index = 0; index < networks.length; index++) {
@@ -172,7 +172,6 @@ const getTotalMessages = async (status, src_networks, dest_networks, src_address
 
     // build sql
     let { conditions, values } = buildWhereSql(status, src_networks, dest_networks, src_address, dest_address, from_timestamp, to_timestamp)
-
     let sql = `SELECT count(*) as total FROM messages`
     if (conditions.length == 0) {
         // query data

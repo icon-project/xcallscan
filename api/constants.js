@@ -17,24 +17,23 @@ const WEB3_INSTANTNODES_API_KEY = process.env.WEB3_INSTANTNODES_API_KEY
 const WEB3_QUICKNODE_API_KEY = process.env.WEB3_QUICKNODE_API_KEY
 
 const NETWORK = {
-    ICON: 'icon',
-    HAVAH: 'havah',
 
-    BSC: 'bsc',
-    ETH2: 'eth2',
-    AVAX: 'avax',
-    BASE: 'base',
-    ARBITRUM: 'arbitrum',
-    OPTIMISM: 'optimism',
-    POLYGON: 'polygon',
+    AVAX: CONFIG_NETWORKS.avax.nid,
+    SUI: CONFIG_NETWORKS.sui.nid,
+    NEAR: CONFIG_NETWORKS.near.nid,
+    SONIC: CONFIG_NETWORKS.sonic.nid,
+    ICON: CONFIG_NETWORKS.icon.nid,
+    INJECTIVE: CONFIG_NETWORKS.injective.nid,
+    STELLAR: CONFIG_NETWORKS.stellar.nid,
+    SOLANA: CONFIG_NETWORKS.solana.nid,
+    ARCHWAY: CONFIG_NETWORKS.archway.nid,
+    STACKS: CONFIG_NETWORKS.stacks.nid,
+    BASE: CONFIG_NETWORKS.base.nid,
+    ARBITRUM: CONFIG_NETWORKS.arbitrum.nid,
+    OPTIMISM: CONFIG_NETWORKS.optimism.nid,
+    POLYGON: CONFIG_NETWORKS.polygon.nid,
+    BSC: CONFIG_NETWORKS.bsc.nid
 
-    IBC_ARCHWAY: 'ibc_archway',
-    IBC_NEUTRON: 'ibc_neutron',
-    IBC_INJECTIVE: 'ibc_injective',
-
-    SUI: 'sui',
-    STELLAR: 'stellar',
-    SOLANA: 'solana'
 }
 
 const buildProviderUrls = (urls) => {
@@ -57,24 +56,7 @@ const buildProviderUrls = (urls) => {
 }
 
 const RPC_URLS = {
-    [NETWORK.ICON]: buildProviderUrls(CONFIG_NETWORKS.icon.rpcs),
-    [NETWORK.HAVAH]: buildProviderUrls(CONFIG_NETWORKS.havah.rpcs),
 
-    [NETWORK.BSC]: buildProviderUrls(CONFIG_NETWORKS.bsc.rpcs),
-    [NETWORK.ETH2]: buildProviderUrls(CONFIG_NETWORKS.eth2.rpcs),
-    [NETWORK.AVAX]: buildProviderUrls(CONFIG_NETWORKS.avax.rpcs),
-    [NETWORK.BASE]: buildProviderUrls(CONFIG_NETWORKS.base.rpcs),
-    [NETWORK.ARBITRUM]: buildProviderUrls(CONFIG_NETWORKS.arbitrum.rpcs),
-    [NETWORK.OPTIMISM]: buildProviderUrls(CONFIG_NETWORKS.optimism.rpcs),
-    [NETWORK.POLYGON]: buildProviderUrls(CONFIG_NETWORKS.polygon.rpcs),
-
-    [NETWORK.IBC_ARCHWAY]: buildProviderUrls(CONFIG_NETWORKS.ibc_archway.rpcs),
-    [NETWORK.IBC_NEUTRON]: buildProviderUrls(CONFIG_NETWORKS.ibc_neutron.rpcs),
-    [NETWORK.IBC_INJECTIVE]: buildProviderUrls(CONFIG_NETWORKS.ibc_injective.rpcs),
-
-    [NETWORK.SUI]: buildProviderUrls(CONFIG_NETWORKS.sui.rpcs),
-    [NETWORK.STELLAR]: buildProviderUrls(CONFIG_NETWORKS.stellar.rpcs),
-    [NETWORK.SOLANA]: buildProviderUrls(CONFIG_NETWORKS.solana.rpcs)
 }
 
 const META_URLS = {
@@ -92,10 +74,17 @@ const META_URLS = {
         [NETWORK.BASE]: USE_MAINNET ? 'https://basescan.org/tx/' : 'https://sepolia.basescan.org/tx/',
         [NETWORK.ARBITRUM]: USE_MAINNET ? 'https://arbiscan.io/tx/' : 'https://sepolia.arbiscan.io/tx/',
         [NETWORK.OPTIMISM]: USE_MAINNET ? 'https://optimistic.etherscan.io/tx/' : 'https://sepolia-optimism.etherscan.io/tx/',
-        [NETWORK.SUI]: USE_MAINNET ? 'https://suiscan.xyz/mainnet/tx/' : 'https://suiscan.xyz/testnet/tx/',
+        [NETWORK.SUI]: USE_MAINNET ? 'https://suivision.xyz/txblock/' : 'https://testnet.suivision.xyz/txblock/',
         [NETWORK.POLYGON]: USE_MAINNET ? 'https://polygonscan.com/tx/' : 'https://amoy.polygonscan.com/tx/',
         [NETWORK.STELLAR]: USE_MAINNET ? 'https://stellar.expert/explorer/public/tx/' : 'https://stellar.expert/explorer/testnet/tx/',
-        [NETWORK.SOLANA]: USE_MAINNET ? 'https://explorer.solana.com/tx/{txHash}' : 'https://explorer.solana.com/tx/{txHash}?cluster=testnet'
+        [NETWORK.SOLANA]: USE_MAINNET ? 'https://solscan.io/tx/{txHash}' : 'https://solscan.io/tx/{txHash}?cluster=devnet',
+        [NETWORK.NEAR]: USE_MAINNET ? 'https://nearblocks.io/txns/' : 'https://testnet.nearblocks.io/txns/',
+        [NETWORK.SONIC]: USE_MAINNET ? 'https://sonicscan.org/tx/' : 'https://testnet.sonicscan.org/tx/',
+        [NETWORK.INJECTIVE]: USE_MAINNET
+            ? 'https://explorer.injective.network/transaction/'
+            : 'https://testnet.explorer.injective.network/transaction/',
+        [NETWORK.ARCHWAY]: USE_MAINNET ? 'https://mintscan.io/archway/txs/' : 'https://www.mintscan.io/archway-testnet/tx/',
+        [NETWORK.STACKS]: USE_MAINNET ? 'https://explorer.hiro.so/txid/{txHash}?chain=mainnet' : 'https://explorer.hiro.so/txid/{txHash}?chain=testnet',
     }
 }
 

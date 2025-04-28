@@ -1,12 +1,22 @@
 services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
+    sysctls:
+      net.ipv4.ip_local_port_range: "10240 65535"
   xcallscan-testnet:
     build:
       context: ./
       dockerfile: Dockerfile
     container_name: xcallscan-container-testnet-dev
-    ports:
-      - "3000:3000"
-      - "4000:4000"
+    # ports:
+    #   - "3000:3000"
+    #   - "4000:4000"
 
-    command: sh -c "tsc -p indexer/ && cd ./indexer/ && pm2 start 'npm run start' --name indexer && cd ../api && pm2 start 'npm run start' --name api && cd ../explorer && pm2 start 'npm run docker-start-testnet-dev' --name explorer && pm2 logs"
+    command: sh -c "cd api && pm2 start 'npm run start' --name api && cd ../explorer && pm2 start 'npm run docker-start-testnet' --name explorer && pm2 logs"
 
