@@ -19,7 +19,8 @@ const NETWORK = {
     OPTIMISM: 'optimism',
     POLYGON: 'polygon',
     ARBITRUM: 'arbitrum',
-    BSC: 'bsc'
+    BSC: 'bsc',
+    NIBIRU: 'nibiru',
 }
 
 const NETWORK_MAPPINGS = {
@@ -38,6 +39,7 @@ const NETWORK_MAPPINGS = {
     [NETWORK.POLYGON]: CONFIG_NETWORKS.polygon.nid,
     [NETWORK.ARBITRUM]: CONFIG_NETWORKS.arbitrum.nid,
     [NETWORK.BSC]: CONFIG_NETWORKS.bsc.nid,
+    [NETWORK.NIBIRU]: CONFIG_NETWORKS.nibiru.nid,
 }
 
 const REV_NETWORK_MAPPINGS = {
@@ -56,6 +58,7 @@ const REV_NETWORK_MAPPINGS = {
     [CONFIG_NETWORKS.polygon.nid]: [NETWORK.POLYGON],
     [CONFIG_NETWORKS.arbitrum.nid]: [NETWORK.ARBITRUM],
     [CONFIG_NETWORKS.bsc.nid]: [NETWORK.BSC],
+    [CONFIG_NETWORKS.nibiru.nid]: [NETWORK.NIBIRU],
 }
 
 const NETWORK_DETAILS = {
@@ -148,6 +151,12 @@ const NETWORK_DETAILS = {
         name: 'bsc',
         logo: `/images/network-bsc.png`,
         nativeAsset: 'ETH',
+    },
+    [NETWORK.NIBIRU]: {
+        id: NETWORK.NIBIRU,
+        name: 'nibiru',
+        logo: `/images/network-nibiru.png`,
+        nativeAsset: 'NIBI',
     },
 }
 
