@@ -86,7 +86,7 @@ const META_URLS = {
             : 'https://testnet.explorer.injective.network/transaction/',
         [NETWORK.ARCHWAY]: USE_MAINNET ? 'https://mintscan.io/archway/txs/' : 'https://www.mintscan.io/archway-testnet/tx/',
         [NETWORK.STACKS]: USE_MAINNET ? 'https://explorer.hiro.so/txid/{txHash}?chain=mainnet' : 'https://explorer.hiro.so/txid/{txHash}?chain=testnet',
-        [NETWORK.NIBIRU]: USE_MAINNET ? 'https://nibiscan.io/tx/{txHash}' : 'https://testnet.nibiscan.io/tx/{txHash}',
+        [NETWORK.NIBIRU]: USE_MAINNET ? 'https://nibiscan.io/tx/' : 'https://testnet.nibiscan.io/tx/',
     }
 }
 
