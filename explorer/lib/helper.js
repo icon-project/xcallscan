@@ -21,6 +21,7 @@ const NETWORK = {
     ARBITRUM: 'arbitrum',
     BSC: 'bsc',
     NIBIRU: 'nibiru',
+    HYPERLIQUID: 'hyperliquid',
 }
 
 const NETWORK_MAPPINGS = {
@@ -40,6 +41,7 @@ const NETWORK_MAPPINGS = {
     [NETWORK.ARBITRUM]: CONFIG_NETWORKS.arbitrum.nid,
     [NETWORK.BSC]: CONFIG_NETWORKS.bsc.nid,
     [NETWORK.NIBIRU]: CONFIG_NETWORKS.nibiru.nid,
+    [NETWORK.HYPERLIQUID]: CONFIG_NETWORKS.hyperliquid.nid,
 }
 
 const REV_NETWORK_MAPPINGS = {
@@ -59,6 +61,7 @@ const REV_NETWORK_MAPPINGS = {
     [CONFIG_NETWORKS.arbitrum.nid]: [NETWORK.ARBITRUM],
     [CONFIG_NETWORKS.bsc.nid]: [NETWORK.BSC],
     [CONFIG_NETWORKS.nibiru.nid]: [NETWORK.NIBIRU],
+    [CONFIG_NETWORKS.hyperliquid.nid]: [NETWORK.HYPERLIQUID],
 }
 
 const NETWORK_DETAILS = {
@@ -157,6 +160,12 @@ const NETWORK_DETAILS = {
         name: 'nibiru',
         logo: `/images/network-nibiru.png`,
         nativeAsset: 'NIBI',
+    },
+    [NETWORK.HYPERLIQUID]: {
+        id: NETWORK.HYPERLIQUID,
+        name: 'hyperliquid',
+        logo: `/images/network-hyperliquid.png`,
+        nativeAsset: 'HYPE',
     },
 }
 

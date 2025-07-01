@@ -1,10 +1,10 @@
 
 'use client'
 export default function TxHashLink({ href }) {
-    let linkClass = 'hover:underline inline-block w-[37rem]' 
+    let linkClass = 'hover:underline inline-block w-[37rem]'
     let copyButton = (
         <button onClick={(e) => e.clipboardData.setData('text/plain', 'Hello, world!')}>
-            <ClipboardDocumentIcon width={20} height={20} className={'opacity-75 text-gray-900 cursor-pointer'} />
+            <ClipboardDocumentIcon width={20} height={20} className={'opacity-75 text-gray-900 copy-hash cursor-pointer'} />
         </button>
     )
     return (

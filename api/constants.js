@@ -33,7 +33,8 @@ const NETWORK = {
     OPTIMISM: CONFIG_NETWORKS.optimism.nid,
     POLYGON: CONFIG_NETWORKS.polygon.nid,
     BSC: CONFIG_NETWORKS.bsc.nid,
-    NIBIRU: CONFIG_NETWORKS.nibiru.nid
+    NIBIRU: CONFIG_NETWORKS.nibiru.nid,
+    HYPERLIQUID: CONFIG_NETWORKS.hyperliquid.nid
 
 }
 
@@ -87,6 +88,7 @@ const META_URLS = {
         [NETWORK.ARCHWAY]: USE_MAINNET ? 'https://mintscan.io/archway/txs/' : 'https://www.mintscan.io/archway-testnet/tx/',
         [NETWORK.STACKS]: USE_MAINNET ? 'https://explorer.hiro.so/txid/{txHash}?chain=mainnet' : 'https://explorer.hiro.so/txid/{txHash}?chain=testnet',
         [NETWORK.NIBIRU]: USE_MAINNET ? 'https://nibiscan.io/tx/' : 'https://testnet.nibiscan.io/tx/',
+        [NETWORK.HYPERLIQUID]: USE_MAINNET ? 'https://purrsec.com/tx/' : 'https://purrsec.com/tx/',
     }
 }
 
