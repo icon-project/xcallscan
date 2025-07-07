@@ -19,9 +19,8 @@ export default async function MessageDetail({ msgData, meta }) {
             msgAction = `${msgData.action_type} ${round(transferAmount)} ${transferAssetSymbol}`
             break
         case 'Swap':
-            msgAction = `${msgData.action_type} ${round(msgActionDetail?.src_amount)} ${msgActionDetail?.src_asset?.symbol} -> ${round(msgActionDetail?.dest_amount)} ${
-                msgActionDetail?.dest_asset?.symbol
-            }`
+            msgAction = `${msgData.action_type} ${round(msgActionDetail?.src_amount)} ${msgActionDetail?.src_asset?.symbol} -> ${round(msgActionDetail?.dest_amount)} ${msgActionDetail?.dest_asset?.symbol
+                }`
             break
         case 'Loan':
             msgAction = `${msgActionDetail.type} ${round(msgActionDetail?.dest_amount)} ${msgActionDetail?.dest_asset?.symbol}`
@@ -85,9 +84,13 @@ export default async function MessageDetail({ msgData, meta }) {
                         </div>
                         <div className="table-row bg-white border-b">
                             <div className="table-cell xl:w-96 px-3 py-2 xl:px-6 xl:py-4 font-medium whitespace-normal xl:whitespace-nowrap">Last updated at:</div>
-                            <div className="table-cell px-3 py-2 xl:px-6 xl:py-4">{timeAgo(msgData.updated_at * 1000)} ago ({new Date(msgData.updated_at * 1000).toUTCString()})</div>
+                            <div className="table-cell px-3 py-2 xl:px-6 xl:py-4">
+                                {msgData.updated_at
+                                    ? `${timeAgo(msgData.updated_at * 1000)} ago (${new Date(msgData.updated_at * 1000).toUTCString()})`
+                                    : ''}
+                            </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
