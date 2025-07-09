@@ -26,7 +26,7 @@ export default async function RootLayout({ children }) {
     return (
         <html lang="en">
             <head></head>
-            <body className="font-mono min-h-screen">
+            <body className="font-mono min-h-screen bg-[#F8F3F3]">
                 <Header showSearchBar={false} assets={assets} />
                 <div className="-z-20 h-72 w-full absolute hero"></div>
                 <main className="px-4 mb-2 xl:px-24 xl:mb-12 2xl:px-48">
