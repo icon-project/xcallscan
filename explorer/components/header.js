@@ -45,7 +45,7 @@ export default function Header({ showSearchBar, assets }) {
 
                 {showSearchBar ? <SearchBar showFull={false} /> : ''}
 
-                <Dropdown label="" dismissOnClick={false} renderTrigger={() => <Image className="hover:cursor-pointer" src={`/images/network-icon.png`} width={24} height={24} />}>
+                <Dropdown label="" dismissOnClick={false} renderTrigger={() => <Image className="hover:cursor-pointer" src={`/images/sodax_logo.svg`} width={24} height={24} />}>
                     <Dropdown.Item>
                         <a href={process.env.NEXT_PUBLIC_TESTNET_APP_URL}>Testnet</a>
                     </Dropdown.Item>
