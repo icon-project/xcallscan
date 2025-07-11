@@ -11,7 +11,7 @@ export default function Footer() {
                             </svg>
                         </a>
                     </div>
-                    <div className="">© {year} sodaxscan.com</div>
+                    <div className="">© {year} SODAX Scan</div>
                 </div>
             </div>
         </footer>
