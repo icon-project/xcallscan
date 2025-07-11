@@ -33,8 +33,8 @@ const defaultAllowedOrigins = [
     'http://xcallscan.xyz',
     'https://xcallscan.xyz',
     'https://balanced-network-interface-([a-zA-Z0-9]*)-balanced-dao.vercel.app(.*)',
-    'https://sodaxscan.com/',
-    'https://testnet.sodaxscan.com/'
+    'https://sodaxscan.com',
+    'https://testnet.sodaxscan.com'
 ]
 
 const allowedOrigins = defaultAllowedOrigins.concat(process.env.ALLOW_ORIGINS ? process.env.ALLOW_ORIGINS.split(';') : [])
