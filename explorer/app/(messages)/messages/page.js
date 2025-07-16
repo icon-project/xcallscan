@@ -5,7 +5,7 @@ import Loading from './loading'
 import PageTitle from '@/components/page-title'
 
 export default async function MessagesPage({ params, searchParams }) {
-    const pageSize = searchParams.ps ?? 10
+    const pageSize = searchParams.ps ?? 20
     const pageNumber = searchParams.p ?? 1
     const rs = await FetchData.getMessages(pageSize, pageNumber)
 

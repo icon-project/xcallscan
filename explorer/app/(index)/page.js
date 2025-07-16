@@ -19,7 +19,7 @@ export default function Home() {
     const [status, setStatus] = useState('')
 
     // pagination
-    const [pageSize, setPageSize] = useState(10)
+    const [pageSize, setPageSize] = useState(20)
     const [pageNumber, setPageNumber] = useState(1)
 
     let messagesRes = useSWR(
