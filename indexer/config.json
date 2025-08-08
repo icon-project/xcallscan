@@ -1,0 +1,525 @@
+{
+    "icon": {
+        "AssetManager": "cx1be33c283c7dc7617181d1b21a6a2309e71b1ee7",
+        "Assets": {
+            "0x0000000000000000000000000000000000000000": {
+                "name": "ICX",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "cx3975b43d260fb8ec802cef6e60c2f4d07486f11d": {
+                "name": "wICX",
+                "decimals": 18
+            },
+            "0xb66cb7d841272af6baa8b8119007edee35d2c24f": {
+                "name": "wICX",
+                "decimals": 18
+            },
+            "0x654dddf32a9a2ac53f5fb54bf1e93f66791f8047": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "cx88fd7df7ddff82f7cc735c871dc519838cb235bb": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xde8e19a099fedf9d617599f62c5f7f020d92b572": {
+                "name": "BALN",
+                "decimals": 18
+            },
+            "0x730a6899f0153ea13c6910417a9f07f7d0f39a18": {
+                "name": "OMM",
+                "decimals": 18
+            }
+        }
+    },
+    "sonic": {
+        "AssetManager": "0x5bdd1e1c5173f4c912cc919742fb94a55ecfaf86",
+        "Assets": {
+            "0x0000000000000000000000000000000000000000": {
+                "name": "Sonic",
+                "decimals": 18
+            },
+            "0x62ecc3Eeb80a162c57624B3fF80313FE69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x21685E341DE7844135329914Be6Bd8D16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            }
+        }
+    },
+    "avax": {
+        "AssetManager": "0x5bdd1e1c5173f4c912cc919742fb94a55ecfaf86",
+        "Assets": {
+            "0x0000000000000000000000000000000000000000": {
+                "name": "AVAX",
+                "decimals": 18
+            },
+            "0x14238D267557E9d799016ad635B53CD15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0xc9e4f0b6195f389d9d2b639f2878b7674eb9d8cd": {
+                "name": "AVAX",
+                "decimals": 18
+            },
+            "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e": {
+                "name": "USDC",
+                "decimals": 6
+            },
+            "0x41abf4b1559ff709ef8150079bcb26db1fffd117": {
+                "name": "SodaUSDC",
+                "decimals": 6
+            },
+            "0x41fd5c169e014e2a657b9de3553f7a7b735fe47a": {
+                "name": "USDT",
+                "decimals": 6
+            },
+            "0x289cDa1043b4Ce26BDCa3c12E534f56b24308A5B": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x6958a4CBFe11406E2a1c1d3a71A1971aD8B3b92F": {
+                "name": "bnUSD",
+                "decimals": 18
+            }
+        }
+    },
+    "base": {
+        "AssetManager": "0x348be44f63a458be9c1b13d6fd8e99048f297bc3",
+        "Assets": {
+            "0x4effB5813271699683C25c734F4daBc45B363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "ETH",
+                "decimals": 18
+            },
+            "0x70178089842be7f8e4726b33f0d1569db8021faa": {
+                "name": "ETH",
+                "decimals": 18
+            },
+            "0x72e852545b024ddcbc5b70c1bcbdaa025164259c": {
+                "name": "USDC",
+                "decimals": 6
+            },
+            "0xacfab3f31c0a18559d78556bbf297ec29c6cf8aa": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x55e0ad45eb97493b3045eee417fb6726cb85dfd4": {
+                "name": "weETH",
+                "decimals": 18
+            },
+            "0x494aaeaefdf5964d4ed400174e8c5b98c00957aa": {
+                "name": "wsETH",
+                "decimals": 18
+            },
+            "0x2803a23a3ba6b09e57d1c71dec0d9efdbb00a27f": {
+                "name": "cbBTC",
+                "decimals": 18
+            }
+        }
+    },
+    "optimism": {
+        "AssetManager": "0x348be44f63a458be9c1b13d6fd8e99048f297bc3",
+        "Assets": {
+            "0x4effB5813271699683C25c734F4daBc45B363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "ETH",
+                "decimals": 18
+            },
+            "0xf4f7dc27c17470a26d0de9039cf0ea5045f100e8": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xad332860dd3b6f0e63f4f66e9457900917ac78cd": {
+                "name": "ETH",
+                "decimals": 18
+            },
+            "0x238384ae2b4f0ec189ecb5031859ba306b2679c5": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xb7C213CbD24967dE9838fa014668FDDB338f724B": {
+                "name": "USDC",
+                "decimals": 6
+            },
+            "0x61e26f611090CdC6bc79A7Bf156b0fD10f1fC212": {
+                "name": "wsETH",
+                "decimals": 18
+            },
+            "0xE121c0Dc2B33c00ff31ee3D902D248cc3f19Ea50": {
+                "name": "weETH",
+                "decimals": 18
+            },
+            "xc168067d95109003805aC865ae556e8476DC69bc": {
+                "name": "USDT",
+                "decimals": 6
+            }
+        }
+    },
+    "arbitrum": {
+        "AssetManager": "0x348BE44F63A458be9C1b13D6fD8e99048F297Bc3",
+        "Assets": {
+            "0x4effB5813271699683C25c734F4daBc45B363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "ETH",
+                "decimals": 18
+            },
+            "0xaf88d065e77c8cc2239327c5edb3a432268e5831": {
+                "name": "USDC",
+                "decimals": 6
+            },
+            "0xa256dd181c3f6e5ec68c6869f5d50a712d47212e": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xdcd9578b51ef55239b6e68629d822a8d97c95b86": {
+                "name": "ETH",
+                "decimals": 18
+            },
+            "0x419ca9054e44e94ceab52846ecdc3997439bbca6": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xfb0acb1b2720b620935f50a6dd3f7fea52b2fcbe": {
+                "name": "wBTC",
+                "decimals": 18
+            },
+            "0x5979d7b546e38e414f7e9822514be443a4800529": {
+                "name": "wstETH",
+                "decimals": 18
+            },
+            "0x08d5cf039de35627fd5c0f48b8af4a1647a462e8": {
+                "name": "weETH",
+                "decimals": 18
+            },
+            "0x2d5a7837d68b0c2cc4b14c2af2a1f0ef420dddc5": {
+                "name": "wsETH",
+                "decimals": 18
+            },
+            "0x96fc8540736f1598b7e235e6de8814062b3b5d3b": {
+                "name": "tBTC",
+                "decimals": 18
+            },
+            "0x3c0a80c6a1110fc80309382b3989ec626c135ee9": {
+                "name": "USDT",
+                "decimals": 6
+            },
+            "0xdb7bda65c3a1c51d64dc4444e418684677334109": {
+                "name": "USDC",
+                "decimals": 6
+            }
+        }
+    },
+    "polygon": {
+        "AssetManager": "0x348be44f63a458be9c1b13d6fd8e99048f297bc3",
+        "Assets": {
+            "0x208ED38f4783328aA9eBFeC360D32e7520A9B779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "POL",
+                "decimals": 18
+            },
+            "0x39E77f86C1B1f3fbAb362A82b49D2E86C09659B4": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x9ee17486571917837210824b0d4cadfe3b324d12": {
+                "name": "POL",
+                "decimals": 18
+            },
+            "0x18f85f9e80ff9496eebd5979a051af16ce751567": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xa36893ba308b332fdebfa95916d1df3a2e3cf8b3": {
+                "name": "USDC",
+                "decimals": 6
+            }
+        }
+    },
+    "nibiru": {
+        "AssetManager": "0x6958a4cbfe11406e2a1c1d3a71a1971ad8b3b92f",
+        "Assets": {
+            "0xc6c85287a8b173A509C2F198bB719A8a5a2d0C68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "NIBI",
+                "decimals": 18
+            },
+            "0x043fb7e23350dd5b77de5e228b528763decb9131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x3d73437dd81b3f9ec82752beb1752f03a8531710": {
+                "name": "USDC",
+                "decimals": 6
+            },
+            "0x11b93c162aabffd026539bb3b9f9ec22c8b7ef8a": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xe0064414c2c1a636a9424c7a17d86fbf7fd3f190": {
+                "name": "NIBI",
+                "decimals": 18
+            }
+        }
+    },
+    "bsc": {
+        "AssetManager": "0x348BE44F63A458be9C1b13D6fD8e99048F297Bc3",
+        "Assets": {
+            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d": {
+                "name": "Binance-Peg USDC",
+                "decimals": 18
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "BNB",
+                "decimals": 18
+            },
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "SodaBNB",
+                "decimals": 18
+            },
+            "0x8428fedc020737a5a2291f46cb1b80613ed71638": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x13b70564b1ec12876b20fab5d1bb630311312f4f": {
+                "name": "BNB",
+                "decimals": 18
+            },
+            "0x57fc2ac5701e463ae261adbd6c99fbeb48ce5293": {
+                "name": "ETHB",
+                "decimals": 18
+            },
+            "0xd8a24c71fea5bb81c66c01e532de7d9b11e13905": {
+                "name": "BTCB",
+                "decimals": 18
+            },
+            "0x5ce6c1c51ff762cf3acd21396257046f694168b6": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x9d58508ad10d34048a11640735ca5075bba07b35": {
+                "name": "USDC",
+                "decimals": 6
+            }
+        }
+    },
+    "hyperliquid": {
+        "AssetManager": "0xAfd6A6e4287A511D3BAAd013093815268846FBb7",
+        "Assets": {
+            "0x0000000000000000000000000000000000000000": {
+                "name": "HYPE",
+                "decimals": 18
+            },
+            "0x6E81124fC5d2Bf666B16a0A5d90066eBf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            }
+        }
+    },
+    "botanix": {
+        "AssetManager": "0xa8f30fd43c7537dfd175cd117bc2880ab964c192",
+        "Assets": {
+            "0x0000000000000000000000000000000000000000": {
+                "name": "BTC",
+                "decimals": 18
+            },
+            "0x03e99853c6376b13a4c6e4d0a115f1639c9fa14e": {
+                "name": "BTC",
+                "decimals": 18
+            },
+            "0xd1d14bf3324c901855a1f7d0d5ca4c8458d2a780": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xc1df02fb7b1b06be886592c89f6955387998b2f7": {
+                "name": "USDC",
+                "decimals": 6
+            },
+            "0xb5239140745067502ee35b4e2dc2869418db8309": {
+                "name": "bnUSD",
+                "decimals": 18
+            }
+        }
+    },
+    "stellar": {
+        "AssetManager": "CCGF33A4CO6D3BXFEKPXVCFCZBK76I3AQOZK6KIKRPAWAZR3632WHCJ3",
+        "Assets": {
+            "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA":{
+                "name": "XLM",
+                "decimals": 7
+            },
+            "0x6BC8C37cba91F76E68C9e6d689A9C21E4d32079B": {
+                "name": "sodaXLM",
+                "decimals": 7
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "XLM",
+                "decimals": 7
+            },
+            "CD6YBFFWMU2UJHX2NGRJ7RN76IJVTCC7MRA46DUBXNB7E6W7H7JRJ2CX": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x8ac68af223907fb1b893086601a3d99e00f2fa9d": {
+                "name": "XLM",
+                "decimals": 7
+            },
+            "0x23225ab8e63fca4070296678cb46566d57e1bbe3": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x348007b53f25a9a857ab8ea81ec9e3ccbcf440f2": {
+                "name": "USDC",
+                "decimals": 7
+            },
+            "0x1559b52d2e165da1505a542ea37c543c9137f52a": {
+                "name": "legacy bnUSD",
+                "decimals": 18
+            }
+        }
+    },
+    "solana": {
+        "AssetManager": "AnCCJjheynmGqPp6Vgat9DTirGKD4CtQzP8cwTYV8qKH",
+        "Assets": {
+            "0xdEa692287E2cE8Cb08FA52917Be0F16b1DACDC87": {
+                "name": "sodaSOL",
+                "decimals": 9
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "SOL",
+                "decimals": 9
+            },
+            "3rSPCLNEF7Quw4wX8S1NyKivELoyij8eYA2gJwBgt4V5": {
+                "name": "bnUSD",
+                "decimals": 9
+            },
+            "0x0c09e69a4528945de6d16c7e469dea6996fdf636": {
+                "name": "SOL",
+                "decimals": 9
+            },
+            "0x14C65b1CDc0B821569081b1F77342dA0D0CbF439": {
+                "name": "bnUSD",
+                "decimals": 9
+            },
+            "0xC3f020057510ffE10Ceb882e1B48238b43d78a5e": {
+                "name": "USDC",
+                "decimals": 6
+            }
+        }
+    },
+    "sui": {
+        "AssetManager": "0xa17a409164d1676db71b411ab50813ba2c7dd547d2df538c699049566f1ff922::asset_manager::0xcb7346339340b7f8dea40fcafb70721dc2fcfa7e8626a89fd954d46c1f928b61",
+        "Assets": {
+            "0x0000000000000000000000000000000000000000": {
+                "name": "SUI",
+                "decimals": 9
+            },
+            "0xdc5B4b00F98347E95b9F94911213DAB4C687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 9
+            },
+            "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI": {
+                "name": "SUI",
+                "decimals": 9
+            },
+            "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC": {
+                "name": "USDC",
+                "decimals": 6
+            },
+            "0xff4de2b2b57dd7611d2812d231a467d007b702a101fd5c7ad3b278257cddb507::bnusd::BNUSD": {
+                "name": "bnUSD",
+                "decimals": 9
+            },
+            "0x4676b2a551b25c04e235553c1c81019337384673": {
+                "name": "SUI",
+                "decimals": 9
+            },
+            "0xDf23097B9AEb917Bf8fb70e99b6c528fffA35364": {
+                "name": "bnUSD",
+                "decimals": 9
+            },
+            "0x5635369c8a29A081d26C2e9e28012FCa548BA0Cb": {
+                "name": "USDC",
+                "decimals": 6
+            },
+            "0x039666bd0cbc96a66c40e8541af465beaa81aa7e": {
+                "name": "afSUI",
+                "decimals": 9
+            },
+            "0xb202c674c9a79b5681e981ba0daa782b3ceeebbe": {
+                "name": "mSUI",
+                "decimals": 9
+            },
+            "0x67a26d11fce15e8b33ac97230d36cae1c52c35e7": {
+                "name": "haSUI",
+                "decimals": 9
+            },
+            "0x025715bcda08db06c795cd5bf944e2081468d99a": {
+                "name": "vSUI",
+                "decimals": 9
+            },
+            "0xac509404f3a3ca3f7766baf65be45a52b1cfccd7": {
+                "name": "yapSUI",
+                "decimals": 9
+            },
+            "0x514569c788b096595672e0f68ec72387a22ac67b": {
+                "name": "trivenSUI",
+                "decimals": 9
+            },
+            "0xddf6ad38f9c9451c1f4cdf369040f6869e37393e": {
+                "name": "legacy bnUSD",
+                "decimals": 9
+            }
+        }
+    },
+    "injective": {
+        "AssetManager": "inj1dg6tm62uup53wn2kn97caeqfwt0sukx3qjk8rw",
+        "Assets": {
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "INJ",
+                "decimals": 18
+            },
+            "inj1d036ftaatxpkqsu9hja8r24rv3v33chz3appxp": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xd375590b4955f6ea5623f799153f9b787a3bd319": {
+                "name": "INJ",
+                "decimals": 18
+            },
+            "0x4Bc1211fAA06Fb50Ff61a70331F56167AE511057": {
+                "name": "USDC",
+                "decimals": 6
+            }
+        }
+    }
+}
