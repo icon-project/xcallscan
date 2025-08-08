@@ -181,8 +181,13 @@ const NETWORK_DETAILS = {
 const MSG_ACTION_TYPES = {
     SendMsg: 'SendMsg',
     Transfer: 'Transfer',
-    Swap: 'Swap',
-    Loan: 'Loan'
+    Borrow: 'Borrow',
+    Supply: 'Supply',
+    Deposit: 'Deposit',
+    Withdraw: 'Withdraw',
+    CreateIntent: 'CreateIntent',
+    CancelIntent: 'CancelIntent',
+    IntentFilled: 'IntentFilled'
 }
 
 const getNativeAsset = (network) => {

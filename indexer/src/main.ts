@@ -61,7 +61,7 @@ const main = async () => {
             }
             // console.log(actionType)
             console.log(`Action: ${actionType.action} \nAction Details: ${actionType.actionText} \nTransaction Fee: ${payload.txnFee}\n\n`)
-            // await updateTransactionInfo(id, payload.txnFee, actionType.action, actionType.actionText || "")
+            await updateTransactionInfo(id, payload.txnFee, actionType.action, actionType.actionText || "")
         } catch (error) {
             const errMessage = error instanceof Error ? error.message : String(error);
             console.log("Failed updating transaction info for id", id, errMessage)
@@ -74,10 +74,21 @@ main().catch(console.error).finally(() => {
     isRunning = false;
 });
 
-setInterval(() => {
+const intervalId = setInterval(() => {
     if (isRunning) return;
     isRunning = true;
     main().catch(console.error).finally(() => {
         isRunning = false;
     });
 }, 5000);
+
+function shutdownHandler(signal: string) {
+  return () => {
+    console.log(`Received ${signal}. Cleaning up...`);
+    clearInterval(intervalId);
+    process.exit(0); // Exit cleanly
+  };
+}
+
+process.on('SIGINT', shutdownHandler('SIGINT'));
+process.on('SIGTERM', shutdownHandler('SIGTERM'));
