@@ -80,7 +80,7 @@ const intervalId = setInterval(() => {
     main().catch(console.error).finally(() => {
         isRunning = false;
     });
-}, 5000);
+}, Number.parseInt(process.env.REQUEST_DELAY || "5000"));
 
 function shutdownHandler(signal: string) {
   return () => {

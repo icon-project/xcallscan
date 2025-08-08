@@ -369,7 +369,7 @@
     "stellar": {
         "AssetManager": "CCGF33A4CO6D3BXFEKPXVCFCZBK76I3AQOZK6KIKRPAWAZR3632WHCJ3",
         "Assets": {
-            "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA":{
+            "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA": {
                 "name": "XLM",
                 "decimals": 7
             },
@@ -406,6 +406,10 @@
     "solana": {
         "AssetManager": "AnCCJjheynmGqPp6Vgat9DTirGKD4CtQzP8cwTYV8qKH",
         "Assets": {
+            "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+                "name": "USDC",
+                "decimals": 6
+            },
             "0xdEa692287E2cE8Cb08FA52917Be0F16b1DACDC87": {
                 "name": "sodaSOL",
                 "decimals": 9

@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { actionType, SendMessage, Transfer } from "./types";
 import { getHandler } from "./handler";
 import { RLP } from '@ethereumjs/rlp';
-import { chains, sonic } from "./configs";
+import { chains, solana, sonic } from "./configs";
 import { bigintDivisionToDecimalString } from "./utils";
 
 const calculateSelector = (signature: string) => ethers.keccak256(ethers.toUtf8Bytes(signature)).slice(0, 10);
@@ -222,16 +222,16 @@ export const parsePayloadData = (data: string, srcChainId: string, dstChainId: s
     } catch (err) {
         const errMessage = err instanceof Error ? err.message : String(err);
         console.log("error with fallback ABI decode", errMessage)
-        console.log(err)
         try {
             const innerCalls = abi.decode(['(address,uint256,bytes)[]'], payloadBuffer);
             for (const call of innerCalls[0]) {
+
                 const result = decodeCallData(call[2], srcChainId, dstChainId);
                 if (result.action !== "SendMessage") {
                     tmpResult = result
                     if (!tmpResult.amount) {
-                        tmpResult.amount = innerCalls[1]
-                        tmpResult.tokenAddress = innerCalls[0]
+                        tmpResult.amount = call[1]
+                        tmpResult.tokenAddress = call[0]
                     }
                 }
                 if (finalActionTypes.includes(result.action)) {
@@ -259,7 +259,35 @@ export const parsePayloadData = (data: string, srcChainId: string, dstChainId: s
             //         }
             //     }
             // }
-        } catch {
+        } catch (err) {
+            const errMessage = err instanceof Error ? err.message : String(err);
+            console.log("error occurred parsing payload", errMessage)
+            if (srcChainId === solana) {
+                try {
+                    //fetch payload from relayer and process
+                    const payload = "0x"
+                    const payloadBuffer = Buffer.from(payload.replace(/^0x/, ''), 'hex');
+                    const innerCalls = abi.decode(['(address,uint256,bytes)[]'], payloadBuffer);
+                    for (const call of innerCalls[0]) {
+
+                        const result = decodeCallData(call[2], srcChainId, dstChainId);
+                        if (result.action !== "SendMessage") {
+                            tmpResult = result
+                            if (!tmpResult.amount) {
+                                tmpResult.amount = call[1]
+                                tmpResult.tokenAddress = call[0]
+                            }
+                        }
+                        if (finalActionTypes.includes(result.action)) {
+                            if (result.tokenAddress) {
+                                result.tokenAddress = decodeTokenAddress(result.tokenAddress, srcChainId, dstChainId)
+                            }
+                            return result;
+                        }
+                    }
+                } catch {
+                }
+            }
             return {
                 action: SendMessage
             }

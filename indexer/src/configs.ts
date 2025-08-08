@@ -72,7 +72,9 @@ export const RPC_URLS: Record<string, string> = {
   [botanix]: requireEnv("BOTANIX_URL"),
   [stellar]: requireEnv("STELLAR_URL"),
   [icon]: requireEnv("ICON_URL"),
-  [sui]: requireEnv("SUI_URL")
+  [sui]: requireEnv("SUI_URL"),
+  [solana]: requireEnv("SOLANA_URL"),
+  [injective]: requireEnv("INJECTIVE_URL")
 };
 
 type ChainsById = {
