@@ -35,7 +35,7 @@ export const decodeCallData = (callData: string, srcChainId: string, _: string):
                 return {
                     action: 'Supply',
                     tokenAddress: tokenAddress,
-                    amount: bigintDivisionToDecimalString(tokenAmount, assetsInformation[tokenAddress].decimals),
+                    amount: tokenAmount,
                     actionText: tokenAddress in assetsInformation ? `Supply ${bigintDivisionToDecimalString(supply[1], assetsInformation[tokenAddress].decimals)} ${assetsInformation[tokenAddress].name}` : `Supply ${bigintDivisionToDecimalString(tokenAmount, 18)} ${tokenAddress}`
                 };
             }
@@ -206,7 +206,7 @@ export const parsePayloadData = (data: string, srcChainId: string, dstChainId: s
                 let chainId = srcChainId
                 if (chainId === sonic) {
                     chainId = dstChainId
-                }
+                }                
                 const srcAssetsInformation = chains[chainId].Assets
                 if (tmpResult.tokenAddress in srcAssetsInformation) {
                     const denom = srcAssetsInformation[tmpResult.tokenAddress].name

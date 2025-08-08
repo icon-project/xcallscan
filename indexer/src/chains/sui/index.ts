@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ChainHandler } from "../../types/ChainHandler";
 import { TxPayload } from "../../types";
+import { bigintDivisionToDecimalString } from "../../utils";
 
 export class SuiHandler implements ChainHandler {
     private rpcUrl: string;
@@ -8,25 +9,35 @@ export class SuiHandler implements ChainHandler {
     constructor(config: { rpcUrl: string }) {
         this.rpcUrl = config.rpcUrl;
     }
-    
+
     decodeAddress(address: string): string {
-        return Buffer.from(address.replace("0x",""),'hex').toString()
+        return Buffer.from(address.replace("0x", ""), 'hex').toString()
     }
 
     async fetchPayload(txHash: string): Promise<TxPayload> {
         const jsonRpcRequest = {
             jsonrpc: "2.0",
-            method: "sui_getEvents",
+            method: "sui_getTransactionBlock",
             params: [
-                txHash
+                txHash,
+                {
+                    "showInput": false,
+                    "showRawInput": false,
+                    "showEffects": true,
+                    "showEvents": true,
+                    "showObjectChanges": false,
+                    "showBalanceChanges": false,
+                    "showRawEffects": false
+                }
             ],
             id: 1
         };
         const parsedResponse = (await axios.post(this.rpcUrl, jsonRpcRequest)).data;
-        for (const event of parsedResponse.result) {
+        const totalGas = Number(parsedResponse.result.effects.gasUsed.computationCost) + Number(parsedResponse.result.effects.gasUsed.storageCost) - Number(parsedResponse.result.effects.gasUsed.storageRebate)
+        for (const event of parsedResponse.result.events) {
             const parsedJson = event.parsedJson
             return {
-                txnFee: "0",
+                txnFee: `${bigintDivisionToDecimalString(BigInt(totalGas),9)} SUI`,
                 payload: Buffer.from(parsedJson.payload).toString("hex"),
             };
         }

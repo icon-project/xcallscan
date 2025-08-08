@@ -439,13 +439,21 @@
     "sui": {
         "AssetManager": "0xa17a409164d1676db71b411ab50813ba2c7dd547d2df538c699049566f1ff922::asset_manager::0xcb7346339340b7f8dea40fcafb70721dc2fcfa7e8626a89fd954d46c1f928b61",
         "Assets": {
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833":{
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
             "0x0000000000000000000000000000000000000000": {
                 "name": "SUI",
                 "decimals": 9
             },
-            "0xdc5B4b00F98347E95b9F94911213DAB4C687e1e3": {
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
                 "name": "sodaSUI",
-                "decimals": 9
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51":{
+                "name": "bnUSD",
+                "decimals": 18
             },
             "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI": {
                 "name": "SUI",
@@ -463,7 +471,7 @@
                 "name": "SUI",
                 "decimals": 9
             },
-            "0xDf23097B9AEb917Bf8fb70e99b6c528fffA35364": {
+            "0xdf23097b9aeb917bf8fb70e99b6c528fffa35364": {
                 "name": "bnUSD",
                 "decimals": 9
             },
