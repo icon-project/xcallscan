@@ -2,12 +2,76 @@
     "icon": {
         "AssetManager": "cx1be33c283c7dc7617181d1b21a6a2309e71b1ee7",
         "Assets": {
-            "0x0000000000000000000000000000000000000000": {
-                "name": "ICX",
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
                 "decimals": 18
             },
             "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
                 "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
+            "0x0000000000000000000000000000000000000000": {
+                "name": "ICX",
                 "decimals": 18
             },
             "cx3975b43d260fb8ec802cef6e60c2f4d07486f11d": {
@@ -60,6 +124,74 @@
     "avax": {
         "AssetManager": "0x5bdd1e1c5173f4c912cc919742fb94a55ecfaf86",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "0x0000000000000000000000000000000000000000": {
                 "name": "AVAX",
                 "decimals": 18
@@ -97,6 +229,74 @@
     "base": {
         "AssetManager": "0x348be44f63a458be9c1b13d6fd8e99048f297bc3",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "0x4effB5813271699683C25c734F4daBc45B363709": {
                 "name": "sodaETH",
                 "decimals": 18
@@ -134,6 +334,74 @@
     "optimism": {
         "AssetManager": "0x348be44f63a458be9c1b13d6fd8e99048f297bc3",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "0x4effB5813271699683C25c734F4daBc45B363709": {
                 "name": "sodaETH",
                 "decimals": 18
@@ -175,6 +443,74 @@
     "arbitrum": {
         "AssetManager": "0x348BE44F63A458be9C1b13D6fD8e99048F297Bc3",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "0x4effB5813271699683C25c734F4daBc45B363709": {
                 "name": "sodaETH",
                 "decimals": 18
@@ -232,6 +568,74 @@
     "polygon": {
         "AssetManager": "0x348be44f63a458be9c1b13d6fd8e99048f297bc3",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "0x208ED38f4783328aA9eBFeC360D32e7520A9B779": {
                 "name": "sodaPOL",
                 "decimals": 18
@@ -261,6 +665,74 @@
     "nibiru": {
         "AssetManager": "0x6958a4cbfe11406e2a1c1d3a71a1971ad8b3b92f",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "0xc6c85287a8b173A509C2F198bB719A8a5a2d0C68": {
                 "name": "sodaNIBI",
                 "decimals": 18
@@ -290,16 +762,80 @@
     "bsc": {
         "AssetManager": "0x348BE44F63A458be9C1b13D6fD8e99048F297Bc3",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d": {
                 "name": "Binance-Peg USDC",
                 "decimals": 18
             },
             "0x0000000000000000000000000000000000000000": {
                 "name": "BNB",
-                "decimals": 18
-            },
-            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
-                "name": "SodaBNB",
                 "decimals": 18
             },
             "0x8428fedc020737a5a2291f46cb1b80613ed71638": {
@@ -331,6 +867,74 @@
     "hyperliquid": {
         "AssetManager": "0xAfd6A6e4287A511D3BAAd013093815268846FBb7",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "0x0000000000000000000000000000000000000000": {
                 "name": "HYPE",
                 "decimals": 18
@@ -344,6 +948,74 @@
     "botanix": {
         "AssetManager": "0xa8f30fd43c7537dfd175cd117bc2880ab964c192",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "0x0000000000000000000000000000000000000000": {
                 "name": "BTC",
                 "decimals": 18
@@ -369,6 +1041,74 @@
     "stellar": {
         "AssetManager": "CCGF33A4CO6D3BXFEKPXVCFCZBK76I3AQOZK6KIKRPAWAZR3632WHCJ3",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA": {
                 "name": "XLM",
                 "decimals": 7
@@ -406,6 +1146,74 @@
     "solana": {
         "AssetManager": "AnCCJjheynmGqPp6Vgat9DTirGKD4CtQzP8cwTYV8qKH",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
             "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
                 "name": "USDC",
                 "decimals": 6
@@ -439,7 +1247,63 @@
     "sui": {
         "AssetManager": "0xa17a409164d1676db71b411ab50813ba2c7dd547d2df538c699049566f1ff922::asset_manager::0xcb7346339340b7f8dea40fcafb70721dc2fcfa7e8626a89fd954d46c1f928b61",
         "Assets": {
-            "0xabbb91c0617090f0028bdc27597cd0d038f3a833":{
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
+            "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
+                "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
                 "name": "sodaUSDC",
                 "decimals": 18
             },
@@ -451,7 +1315,7 @@
                 "name": "sodaSUI",
                 "decimals": 18
             },
-            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51":{
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
                 "name": "bnUSD",
                 "decimals": 18
             },
@@ -512,8 +1376,72 @@
     "injective": {
         "AssetManager": "inj1dg6tm62uup53wn2kn97caeqfwt0sukx3qjk8rw",
         "Assets": {
+            "0x40cd41b35db9e5109ae7e54b44de8625db320e6b": {
+                "name": "sodaBNB",
+                "decimals": 18
+            },
+            "0x14238d267557e9d799016ad635b53cd15935d290": {
+                "name": "sodaAVAX",
+                "decimals": 18
+            },
+            "0x4effb5813271699683c25c734f4dabc45b363709": {
+                "name": "sodaETH",
+                "decimals": 18
+            },
+            "0x7a1a5555842ad2d0ed274d09b5c4406a95799d5d": {
+                "name": "sodaBTC",
+                "decimals": 18
+            },
+            "0xdea692287e2ce8cb08fa52917be0f16b1dacdc87": {
+                "name": "sodaSOL",
+                "decimals": 18
+            },
+            "0x6bc8c37cba91f76e68c9e6d689a9c21e4d32079b": {
+                "name": "sodaXLM",
+                "decimals": 18
+            },
             "0x1f22279c89b213944b7ea41dacb0a868ddcdfd13": {
                 "name": "sodaINJ",
+                "decimals": 18
+            },
+            "0xc6c85287a8b173a509c2f198bb719a8a5a2d0c68": {
+                "name": "sodaNIBI",
+                "decimals": 18
+            },
+            "0xdc5b4b00f98347e95b9f94911213dab4c687e1e3": {
+                "name": "sodaSUI",
+                "decimals": 18
+            },
+            "0xe801ca34e19abcbfea12025378d19c4fbe250131": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0xabbb91c0617090f0028bdc27597cd0d038f3a833": {
+                "name": "sodaUSDC",
+                "decimals": 18
+            },
+            "0xbdf1f453fcb61424011bbddcb96cfdb30f3fe876": {
+                "name": "sodaUSDT",
+                "decimals": 18
+            },
+            "0x9d4b663eb075d2a1c7b8eaefb9eccc0510388b51": {
+                "name": "bnUSD",
+                "decimals": 18
+            },
+            "0x62ecc3eeb80a162c57624b3ff80313fe69f5203e": {
+                "name": "sodaS",
+                "decimals": 18
+            },
+            "0x208ed38f4783328aa9ebfec360d32e7520a9b779": {
+                "name": "sodaPOL",
+                "decimals": 18
+            },
+            "0x6e81124fc5d2bf666b16a0a5d90066ebf35c7411": {
+                "name": "sodaHYPE",
+                "decimals": 18
+            },
+            "0x21685e341de7844135329914be6bd8d16982d834": {
+                "name": "sodaSODA",
                 "decimals": 18
             },
             "0x0000000000000000000000000000000000000000": {
