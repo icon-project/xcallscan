@@ -9,7 +9,7 @@ import { SendMessage, Transfer } from "./types";
 dotenv.config();
 const SODAXSCAN_CONFIG = {
     method: 'get',
-    url: 'https://sodaxscan.com/api/messages?skip=0&limit=50',
+    url: 'https://sodaxscan.com/api/messages?skip=0&limit=10',
     headers: {
         'User-Agent': 'Mozilla/5.0',
         Accept: '*/*',
