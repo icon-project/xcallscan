@@ -10,3 +10,18 @@ export function bigintDivisionToDecimalString(num: bigint, decimals: number) {
     }
     return `${integerPart.toString()}.${decimalPart}`;
 }
+
+
+export function multiplyDecimalBy10Pow18(decimalStr: string): bigint {
+  const noDot = decimalStr.replace(".", "");
+  const decimals = (decimalStr.split(".")[1] || "").length;
+  const scale = 18;
+  let adjusted = noDot;
+
+  if (decimals > scale) {
+    adjusted = noDot.slice(0, noDot.length - (decimals - scale));
+  } else if (decimals < scale) {
+    adjusted = noDot + "0".repeat(scale - decimals);
+  }
+  return BigInt(adjusted);
+}

@@ -160,7 +160,7 @@ export const parsePayloadData = (data: string, srcChainId: string, dstChainId: s
     try {
         const rlp = RLP.decode(payloadBuffer);
         if (Array.isArray(rlp) && rlp.length === 5) {
-            const tokenAddress = `0x${Buffer.from(rlp[0] as Uint8Array).toString('hex')}`
+            const tokenAddress = `0x${Buffer.from(rlp[0] as Uint8Array).toString('hex')}`.toLowerCase()
             const tokenAmount = BigInt(`0x${Buffer.from(rlp[3] as Uint8Array).toString('hex')}`)
             const callDataHex = `0x${Buffer.from(rlp[4] as Uint8Array).toString('hex')}`;
             let denom = ""

@@ -5,6 +5,7 @@ import { parsePayloadData } from "./action";
 import { updateTransactionInfo } from "./db";
 import dotenv from 'dotenv';
 import { SendMessage, Transfer } from "./types";
+import { bigintDivisionToDecimalString, multiplyDecimalBy10Pow18 } from "./utils";
 
 dotenv.config();
 const SODAXSCAN_CONFIG = {
@@ -52,8 +53,9 @@ const main = async () => {
                     actionType.action = 'Deposit';
                     const token = actionType.tokenAddress || ""
                     if (token in assetsInformation) {
+                        const adjustedAmount = bigintDivisionToDecimalString(BigInt(multiplyDecimalBy10Pow18(actionType.amount || "0")), assetsInformation[token].decimals)
                         actionType.denom = assetsInformation[token].name
-                        actionType.actionText = `Deposit ${actionType.amount} ${actionType.denom}`
+                        actionType.actionText = `Deposit ${adjustedAmount} ${actionType.denom}`
                     } else {
                         actionType.actionText = `Deposit ${actionType.amount} ${actionType.tokenAddress}`
                     }
@@ -83,12 +85,13 @@ const intervalId = setInterval(() => {
 }, Number.parseInt(process.env.REQUEST_DELAY || "5000"));
 
 function shutdownHandler(signal: string) {
-  return () => {
-    console.log(`Received ${signal}. Cleaning up...`);
-    clearInterval(intervalId);
-    process.exit(0); // Exit cleanly
-  };
+    return () => {
+        console.log(`Received ${signal}. Cleaning up...`);
+        clearInterval(intervalId);
+        process.exit(0); // Exit cleanly
+    };
 }
 
 process.on('SIGINT', shutdownHandler('SIGINT'));
 process.on('SIGTERM', shutdownHandler('SIGTERM'));
+
