@@ -4,6 +4,7 @@ import { getMessageFromValue, stringToEncodedScVal } from "./utils";
 import { Message } from "./types";
 import { Address, xdr } from "@stellar/stellar-sdk";
 import { TxPayload } from "../../types";
+import { bigintDivisionToDecimalString } from "../../utils";
 
 export class StellarHandler implements ChainHandler {
     private rpcUrl: string;
@@ -19,6 +20,22 @@ export class StellarHandler implements ChainHandler {
         return addr.toString();
     }
 
+    async getTxnFee(txHash: string): Promise<string> {
+        const config = {
+            method: 'get',
+            url: `${process.env.HORIZON_URL}/transactions/${txHash}`,
+            headers: {
+                'User-Agent': 'Mozilla/5.0',
+                Accept: 'application/json',
+                'Accept-Encoding': 'gzip, deflate, br, zstd',
+            },
+        };
+        const response = (await axios.request(config)).data;
+        const fee = response.fee_charged
+        return `${bigintDivisionToDecimalString(BigInt(fee), 7)} XLM`
+
+
+    }
 
     async fetchPayload(txHash: string): Promise<TxPayload> {
         const jsonRpcRequest = {
@@ -56,7 +73,7 @@ export class StellarHandler implements ChainHandler {
         for (const event of events.result.events) {
             const msg: Message = getMessageFromValue(txHash, event.value)
             return {
-                txnFee: "0",
+                txnFee: await this.getTxnFee(txHash),
                 payload: Buffer.from(msg.payload, 'base64').toString('hex')
             }
         }
