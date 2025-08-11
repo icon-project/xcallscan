@@ -6,6 +6,7 @@ import { updateTransactionInfo } from "./db";
 import dotenv from 'dotenv';
 import { SendMessage, SodaxScannerResponse, Transfer } from "./types";
 import { bigintDivisionToDecimalString, multiplyDecimalBy10Pow18 } from "./utils";
+import pool from './db/db';
 
 dotenv.config();
 const SODAXSCAN_CONFIG = {
@@ -109,6 +110,7 @@ const main = async () => {
         };
         const response: SodaxScannerResponse = (await axios.request(SINGLE_EVENT_SODAXSCAN_CONFIG)).data satisfies SodaxScannerResponse;
         await parseTransactionEvent(response);
+        await pool.end();
     }
 }
 
