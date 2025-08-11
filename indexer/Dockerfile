@@ -13,4 +13,5 @@ RUN bun install
 # Copy the rest of the project
 COPY . .
 
-CMD ["bun", "/app/src/main.ts"]
+ENTRYPOINT ["bun", "/app/src/main.ts"]
+CMD []
