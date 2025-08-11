@@ -103,7 +103,7 @@
     "sonic": {
         "AssetManager": "0x5bdd1e1c5173f4c912cc919742fb94a55ecfaf86",
         "Assets": {
-            "0x29219dd400f2bf60e5a23d13be72b486d4038894":{
+            "0x29219dd400f2bf60e5a23d13be72b486d4038894": {
                 "name": "Circle USDC",
                 "decimals": 6
             },
@@ -333,7 +333,7 @@
                 "name": "cbBTC",
                 "decimals": 18
             },
-            "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913":{
+            "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913": {
                 "name": "Circle USDC",
                 "decimals": 6
             }
@@ -342,7 +342,7 @@
     "optimism": {
         "AssetManager": "0x348be44f63a458be9c1b13d6fd8e99048f297bc3",
         "Assets": {
-            "0x0b2c639c533813f4aa9d7837caf62653d097ff85":{
+            "0x0b2c639c533813f4aa9d7837caf62653d097ff85": {
                 "name": "Circle USDC",
                 "decimals": 6
             },
@@ -664,7 +664,7 @@
                 "name": "USDC",
                 "decimals": 6
             },
-            "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359":{
+            "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359": {
                 "name": "Circle USDC",
                 "decimals": 6
             }
@@ -865,6 +865,10 @@
             "0x9d58508ad10d34048a11640735ca5075bba07b35": {
                 "name": "USDC",
                 "decimals": 6
+            },
+            "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c": {
+                "name": "Binance-Peg BTCB Token",
+                "decimals": 18
             }
         }
     },
@@ -1041,7 +1045,7 @@
     "stellar": {
         "AssetManager": "CCGF33A4CO6D3BXFEKPXVCFCZBK76I3AQOZK6KIKRPAWAZR3632WHCJ3",
         "Assets": {
-            "USDC-GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN":{
+            "USDC-GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN": {
                 "name": "Circle USDC",
                 "decimals": 18
             },
@@ -1113,7 +1117,7 @@
                 "name": "sodaSODA",
                 "decimals": 18
             },
-            "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75":{
+            "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75": {
                 "name": "USDC",
                 "decimals": 6
             },
@@ -1242,7 +1246,7 @@
                 "name": "USDC",
                 "decimals": 6
             }
-        }        
+        }
     },
     "sui": {
         "AssetManager": "0xa17a409164d1676db71b411ab50813ba2c7dd547d2df538c699049566f1ff922::asset_manager::0xcb7346339340b7f8dea40fcafb70721dc2fcfa7e8626a89fd954d46c1f928b61",
