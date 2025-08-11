@@ -10,7 +10,7 @@ import { bigintDivisionToDecimalString, multiplyDecimalBy10Pow18 } from "./utils
 dotenv.config();
 const SODAXSCAN_CONFIG = {
     method: 'get',
-    url: `${process.env.SCANNER_URL}/api/messages?skip=0&limit=10`,
+    url: `${process.env.SCANNER_URL}/api/messages?skip=0&limit=${Number.parseInt(process.env.LIMIT || '10')}`,
     headers: {
         'User-Agent': 'Mozilla/5.0',
         Accept: '*/*',
@@ -22,9 +22,9 @@ let lastScannedId = 0
 let isRunning = true;
 
 const processSodaxStream = async () => {
-    const response = (await axios.request(SODAXSCAN_CONFIG)).data satisfies SodaxScannerResponse;
+    const response: SodaxScannerResponse = (await axios.request(SODAXSCAN_CONFIG)).data satisfies SodaxScannerResponse;
     await parseTransactionEvent(response);
-    lastScannedId = response.data.data[0].id
+    lastScannedId = response.data[0].id
 }
 
 async function parseTransactionEvent(response: SodaxScannerResponse) {
@@ -107,7 +107,7 @@ const main = async () => {
                 'Accept-Encoding': 'gzip, deflate, br, zstd',
             },
         };
-        const response = (await axios.request(SINGLE_EVENT_SODAXSCAN_CONFIG)).data satisfies SodaxScannerResponse;
+        const response: SodaxScannerResponse = (await axios.request(SINGLE_EVENT_SODAXSCAN_CONFIG)).data satisfies SodaxScannerResponse;
         await parseTransactionEvent(response);
     }
 }
