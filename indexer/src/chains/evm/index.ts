@@ -66,7 +66,14 @@ export class EvmHandler implements ChainHandler {
         const input = `0x${inputData.slice(10)}`;
         const abi = ethers.AbiCoder.defaultAbiCoder();
         const intentTuple = "(uint256,address,address,address,uint256,uint256,uint256,bool,uint256,uint256,bytes,bytes,address,bytes)";
-        const decoded = abi.decode([intentTuple], input)[0];
+        const intentFillTuple = [
+          intentTuple,
+          "uint256",
+          "uint256",
+          "uint256"
+        ];
+        const decodedIntentFill = abi.decode(intentFillTuple, input);
+        const decoded = decodedIntentFill[0]
         const srcChainId = decoded[8]
         const dstChainId = decoded[9]
         const assetsInformation = chains[srcChainId].Assets
@@ -85,8 +92,8 @@ export class EvmHandler implements ChainHandler {
           outputToken = outputTokenInfo.name
           outputDecimals = outputTokenInfo.decimals
         }
-        const inputAmount = bigintDivisionToDecimalString(decoded[4], decimals)
-        const outputAmount = bigintDivisionToDecimalString(decoded[5], outputDecimals)
+        const inputAmount = bigintDivisionToDecimalString(decodedIntentFill[1], decimals)
+        const outputAmount = bigintDivisionToDecimalString(decodedIntentFill[2], outputDecimals)
         return {
           txnFee: `${bigintDivisionToDecimalString(txFee, 18)} ${this.denom}`,
           payload: "0x",
