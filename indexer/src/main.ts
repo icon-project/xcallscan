@@ -4,7 +4,7 @@ import { chains, sonic } from "./configs";
 import { parsePayloadData } from "./action";
 import { updateTransactionInfo } from "./db";
 import dotenv from 'dotenv';
-import { SendMessage, Transfer } from "./types";
+import { SendMessage, SodaxScannerResponse, Transfer } from "./types";
 import { bigintDivisionToDecimalString, multiplyDecimalBy10Pow18 } from "./utils";
 
 dotenv.config();
@@ -18,80 +18,98 @@ const SODAXSCAN_CONFIG = {
     },
 };
 
-
 let lastScannedId = 0
 let isRunning = true;
 
-const main = async () => {
-    const response = await axios.request(SODAXSCAN_CONFIG);
-    for (const transaction of response.data.data) {
-        const id = transaction.id
+const processSodaxStream = async () => {
+    const response = (await axios.request(SODAXSCAN_CONFIG)).data satisfies SodaxScannerResponse;
+    await parseTransactionEvent(response);
+    lastScannedId = response.data.data[0].id
+}
+
+async function parseTransactionEvent(response: SodaxScannerResponse) {
+    for (const transaction of response.data) {
+        const id = transaction.id;
         if (lastScannedId !== 0 && id <= lastScannedId) {
-            continue
+            continue;
         }
-        const srcChainId = transaction.src_network as string
-        const dstChainId = transaction.dest_network as string
+        const srcChainId = transaction.src_network as string;
+        const dstChainId = transaction.dest_network as string;
         try {
-            console.log("Processing txn", transaction.src_tx_hash)
-            const txHash = transaction.src_tx_hash
-            const payload = await getHandler(srcChainId).fetchPayload(txHash)
-            const actionType = parsePayloadData(payload.payload, srcChainId, dstChainId)
+            console.log("Processing txn", transaction.src_tx_hash);
+            const txHash = transaction.src_tx_hash;
+            const payload = await getHandler(srcChainId).fetchPayload(txHash);
+            const actionType = parsePayloadData(payload.payload, srcChainId, dstChainId);
             if (payload.intentFilled) {
-                actionType.action = "IntentFilled"
-                actionType.actionText = payload.actionText
-                actionType.swapInputToken = payload.swapInputToken
-                actionType.swapOutputToken = payload.swapOutputToken
+                actionType.action = "IntentFilled";
+                actionType.actionText = payload.actionText;
+                actionType.swapInputToken = payload.swapInputToken;
+                actionType.swapOutputToken = payload.swapOutputToken;
             }
-            const assetManager = chains[srcChainId].AssetManager
-            let assetsInformation = chains[srcChainId].Assets
+            const assetManager = chains[srcChainId].AssetManager;
+            let assetsInformation = chains[srcChainId].Assets;
             if (srcChainId === sonic) {
-                assetsInformation = chains[dstChainId].Assets
+                assetsInformation = chains[dstChainId].Assets;
             }
             if (actionType.action === Transfer || actionType.action === SendMessage) {
                 const dstAddress: string = payload.dstAddress || "";
                 if (dstAddress.toLowerCase() === assetManager.toLowerCase()) {
                     actionType.action = 'Deposit';
-                    const token = actionType.tokenAddress || ""
+                    const token = actionType.tokenAddress || "";
                     if (token in assetsInformation) {
-                        const adjustedAmount = bigintDivisionToDecimalString(BigInt(multiplyDecimalBy10Pow18(actionType.amount || "0")), assetsInformation[token].decimals)
-                        actionType.denom = assetsInformation[token].name
-                        actionType.actionText = `Deposit ${adjustedAmount} ${actionType.denom}`
+                        const adjustedAmount = bigintDivisionToDecimalString(BigInt(multiplyDecimalBy10Pow18(actionType.amount || "0")), assetsInformation[token].decimals);
+                        actionType.denom = assetsInformation[token].name;
+                        actionType.actionText = `Deposit ${adjustedAmount} ${actionType.denom}`;
                     } else {
-                        actionType.actionText = `Deposit ${actionType.amount} ${actionType.tokenAddress}`
+                        actionType.actionText = `Deposit ${actionType.amount} ${actionType.tokenAddress}`;
                     }
                 }
             }
-            // console.log(actionType)
-            console.log(`Action: ${actionType.action} \nAction Details: ${actionType.actionText} \nTransaction Fee: ${payload.txnFee}\n\n`)
-            await updateTransactionInfo(id, payload.txnFee, actionType.action, actionType.actionText || "")
+            console.log(`Action: ${actionType.action} \nAction Details: ${actionType.actionText} \nTransaction Fee: ${payload.txnFee}\n\n`);
+            await updateTransactionInfo(id, payload.txnFee, actionType.action, actionType.actionText || "");
         } catch (error) {
             const errMessage = error instanceof Error ? error.message : String(error);
-            console.log("Failed updating transaction info for id", id, errMessage)
+            console.log("Failed updating transaction info for id", id, errMessage);
         }
     }
-    lastScannedId = response.data.data[0].id
-
-}
-main().catch(console.error).finally(() => {
-    isRunning = false;
-});
-
-const intervalId = setInterval(() => {
-    if (isRunning) return;
-    isRunning = true;
-    main().catch(console.error).finally(() => {
-        isRunning = false;
-    });
-}, Number.parseInt(process.env.REQUEST_DELAY || "5000"));
-
-function shutdownHandler(signal: string) {
-    return () => {
-        console.log(`Received ${signal}. Cleaning up...`);
-        clearInterval(intervalId);
-        process.exit(0); // Exit cleanly
-    };
 }
 
-process.on('SIGINT', shutdownHandler('SIGINT'));
-process.on('SIGTERM', shutdownHandler('SIGTERM'));
+const main = async () => {
+    const args = process.argv.slice(2);
+    if (args.length === 0) {
+        processSodaxStream().catch(console.error).finally(() => {
+            isRunning = false;
+        });
+        const intervalId = setInterval(() => {
+            if (isRunning) return;
+            isRunning = true;
+            processSodaxStream().catch(console.error).finally(() => {
+                isRunning = false;
+            });
+        }, Number.parseInt(process.env.REQUEST_DELAY || "5000"));
+        function shutdownHandler(signal: string) {
+            return () => {
+                console.log(`Received ${signal}. Cleaning up...`);
+                clearInterval(intervalId);
+                process.exit(0); // Exit cleanly
+            };
+        }
+        process.on('SIGINT', shutdownHandler('SIGINT'));
+        process.on('SIGTERM', shutdownHandler('SIGTERM'));
+    } else {
+        const eventId = args[0]
+        const SINGLE_EVENT_SODAXSCAN_CONFIG = {
+            method: 'get',
+            url: `${process.env.SCANNER_URL}/api/messages/${eventId}`,
+            headers: {
+                'User-Agent': 'Mozilla/5.0',
+                Accept: '*/*',
+                'Accept-Encoding': 'gzip, deflate, br, zstd',
+            },
+        };
+        const response = (await axios.request(SINGLE_EVENT_SODAXSCAN_CONFIG)).data satisfies SodaxScannerResponse;
+        await parseTransactionEvent(response);
+    }
+}
 
+main().catch(console.error)
