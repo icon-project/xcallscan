@@ -866,7 +866,7 @@
                 "name": "USDC",
                 "decimals": 6
             },
-            "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c": {
+            "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c": {
                 "name": "Binance-Peg BTCB Token",
                 "decimals": 18
             }
