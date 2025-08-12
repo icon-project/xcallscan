@@ -4,6 +4,7 @@ import { getHandler } from "./handler";
 import { RLP } from '@ethereumjs/rlp';
 import { chains, solana, sonic } from "./configs";
 import { bigintDivisionToDecimalString } from "./utils";
+import axios from "axios";
 
 const calculateSelector = (signature: string) => ethers.keccak256(ethers.toUtf8Bytes(signature)).slice(0, 10);
 const zeroAddress = "0x0000000000000000000000000000000000000000"
@@ -151,6 +152,25 @@ export const decodeCallData = (callData: string, srcChainId: string, _: string):
     };
 };
 
+export const parseSolanaTransaction = async (txnHash: string, connSn: string): Promise<string> => {
+    const data = JSON.stringify({
+        "action": "get_packet",
+        "params": {
+            "chain_id": "1",
+            "tx_hash": txnHash,
+            "conn_sn": connSn
+        }
+    });
+    const response = (await axios.post(process.env.RELAY_URL || "",
+        data
+    )).data
+    const payloadData = JSON.parse(response.data.data) || {}
+    if ("payload" in payloadData) {
+        return payloadData.payload
+    }
+    return "0x"
+}
+
 export const parsePayloadData = (data: string, srcChainId: string, dstChainId: string): actionType => {
     const abi = ethers.AbiCoder.defaultAbiCoder();
     const payloadBuffer = Buffer.from(data.replace(/^0x/, ''), 'hex');
@@ -206,7 +226,7 @@ export const parsePayloadData = (data: string, srcChainId: string, dstChainId: s
                 let chainId = srcChainId
                 if (chainId === sonic) {
                     chainId = dstChainId
-                }                
+                }
                 const srcAssetsInformation = chains[chainId].Assets
                 if (tmpResult.tokenAddress in srcAssetsInformation) {
                     const denom = srcAssetsInformation[tmpResult.tokenAddress].name
@@ -262,32 +282,6 @@ export const parsePayloadData = (data: string, srcChainId: string, dstChainId: s
         } catch (err) {
             const errMessage = err instanceof Error ? err.message : String(err);
             console.log("error occurred parsing payload", errMessage)
-            if (srcChainId === solana) {
-                try {
-                    //fetch payload from relayer and process
-                    const payload = "0x"
-                    const payloadBuffer = Buffer.from(payload.replace(/^0x/, ''), 'hex');
-                    const innerCalls = abi.decode(['(address,uint256,bytes)[]'], payloadBuffer);
-                    for (const call of innerCalls[0]) {
-
-                        const result = decodeCallData(call[2], srcChainId, dstChainId);
-                        if (result.action !== "SendMessage") {
-                            tmpResult = result
-                            if (!tmpResult.amount) {
-                                tmpResult.amount = call[1]
-                                tmpResult.tokenAddress = call[0]
-                            }
-                        }
-                        if (finalActionTypes.includes(result.action)) {
-                            if (result.tokenAddress) {
-                                result.tokenAddress = decodeTokenAddress(result.tokenAddress, srcChainId, dstChainId)
-                            }
-                            return result;
-                        }
-                    }
-                } catch {
-                }
-            }
             return {
                 action: SendMessage
             }

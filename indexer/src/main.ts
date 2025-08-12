@@ -1,12 +1,13 @@
 import axios from "axios";
 import { getHandler } from './handler'
-import { chains, sonic } from "./configs";
-import { parsePayloadData } from "./action";
+import { chains, solana, sonic } from "./configs";
+import { parsePayloadData, parseSolanaTransaction } from "./action";
 import { updateTransactionInfo } from "./db";
 import dotenv from 'dotenv';
 import { SendMessage, SodaxScannerResponse, Transfer } from "./types";
 import { bigintDivisionToDecimalString, multiplyDecimalBy10Pow18 } from "./utils";
 import pool from './db/db';
+import { ethers } from "ethers";
 
 dotenv.config();
 const SODAXSCAN_CONFIG = {
@@ -40,7 +41,15 @@ async function parseTransactionEvent(response: SodaxScannerResponse) {
             console.log("Processing txn", transaction.src_tx_hash);
             const txHash = transaction.src_tx_hash;
             const payload = await getHandler(srcChainId).fetchPayload(txHash);
-            const actionType = parsePayloadData(payload.payload, srcChainId, dstChainId);
+            let actionType = parsePayloadData(payload.payload, srcChainId, dstChainId);
+            if (actionType.action === 'SendMessage') {
+                if (srcChainId === solana) {
+                    const payload = await parseSolanaTransaction(transaction.src_tx_hash, transaction.sn)
+                    if(payload!=="0x"){
+                        actionType = parsePayloadData(payload, srcChainId, dstChainId);
+                    }
+                }
+            }
             if (payload.intentFilled) {
                 actionType.action = "IntentFilled";
                 actionType.actionText = payload.actionText;
