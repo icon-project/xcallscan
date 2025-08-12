@@ -1,5 +1,5 @@
 const axios = require('axios')
-const { NETWORK, USE_MAINNET, RPC_URLS } = require('./constants')
+const { NETWORK, USE_MAINNET, RPC_URLS, WEB3_SUDOBLOCK_SUI_API_KEY } = require('./constants')
 
 const hexToNumber = (hex) => {
     return Number(hex)
@@ -48,10 +48,12 @@ const buildBlockHeightRequest = (network) => {
 
         return req
     } else if (network === NETWORK.SUI) {
+        const headers = { 'content-type': 'application/json' }
+        if (WEB3_SUDOBLOCK_SUI_API_KEY) headers['apikey'] = WEB3_SUDOBLOCK_SUI_API_KEY
         const req = axios.request({
             method: 'POST',
             url: RPC_URLS[network][0],
-            headers: { 'content-type': 'application/json' },
+            headers,
             data: {
                 id: 1,
                 jsonrpc: '2.0',

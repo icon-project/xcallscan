@@ -1,7 +1,7 @@
 import { retryAsync } from 'ts-retry'
 
 import { ISubscriberCallback } from '../../interfaces/ISubcriber'
-import { NETWORK, RPC_URLS } from '../../common/constants'
+import { NETWORK, RPC_URLS, WEB3_SUDOBLOCK_SUI_API_KEY } from '../../common/constants'
 import { EventLog } from '../../types/EventLog'
 import AxiosCustomInstance from '../scan/AxiosCustomInstance'
 import { SuiDecoder } from '../decoder/SuiDecoder'
@@ -20,28 +20,34 @@ export class SuiSubscriber extends BaseSubscriber {
     async queryTxBlocks(contractAddress: string, nextCursor: string, descendingOrder: boolean, limit: number = 20): Promise<any> {
         try {
             const axiosInstance = AxiosCustomInstance.getInstance()
+            const headers: any = {}
+            if (WEB3_SUDOBLOCK_SUI_API_KEY) headers['apikey'] = WEB3_SUDOBLOCK_SUI_API_KEY
 
-            const res = await axiosInstance.post(this.url, {
-                jsonrpc: '2.0',
-                id: 8,
-                method: 'suix_queryTransactionBlocks',
-                params: [
-                    {
-                        filter: {
-                            InputObject: contractAddress
+            const res = await axiosInstance.post(
+                this.url,
+                {
+                    jsonrpc: '2.0',
+                    id: 8,
+                    method: 'suix_queryTransactionBlocks',
+                    params: [
+                        {
+                            filter: {
+                                InputObject: contractAddress
+                            },
+                            options: {
+                                showBalanceChanges: true,
+                                showEffects: true,
+                                showEvents: true,
+                                showInput: true
+                            }
                         },
-                        options: {
-                            showBalanceChanges: true,
-                            showEffects: true,
-                            showEvents: true,
-                            showInput: true
-                        }
-                    },
-                    nextCursor && nextCursor != '0' ? nextCursor : null,
-                    limit,
-                    descendingOrder
-                ]
-            })
+                        nextCursor && nextCursor != '0' ? nextCursor : null,
+                        limit,
+                        descendingOrder
+                    ]
+                },
+                { headers }
+            )
 
             return res.data.result
         } catch (error: any) {
@@ -54,21 +60,27 @@ export class SuiSubscriber extends BaseSubscriber {
     async queryTxBlock(digest: string): Promise<any> {
         try {
             const axiosInstance = AxiosCustomInstance.getInstance()
+            const headers: any = {}
+            if (WEB3_SUDOBLOCK_SUI_API_KEY) headers['apikey'] = WEB3_SUDOBLOCK_SUI_API_KEY
 
-            const res = await axiosInstance.post(this.url, {
-                jsonrpc: '2.0',
-                id: 1,
-                method: 'sui_getTransactionBlock',
-                params: [
-                    digest,
-                    {
-                        showBalanceChanges: true,
-                        showEffects: true,
-                        showEvents: true,
-                        showInput: true
-                    }
-                ]
-            })
+            const res = await axiosInstance.post(
+                this.url,
+                {
+                    jsonrpc: '2.0',
+                    id: 1,
+                    method: 'sui_getTransactionBlock',
+                    params: [
+                        digest,
+                        {
+                            showBalanceChanges: true,
+                            showEffects: true,
+                            showEvents: true,
+                            showInput: true
+                        }
+                    ]
+                },
+                { headers }
+            )
 
             return res.data.result
         } catch (error: any) {
