@@ -1230,6 +1230,10 @@
                 "name": "SOL",
                 "decimals": 9
             },
+            "11111111111111111111111111111111": {
+                "name": "SOL",
+                "decimals": 9
+            },
             "3rSPCLNEF7Quw4wX8S1NyKivELoyij8eYA2gJwBgt4V5": {
                 "name": "bnUSD",
                 "decimals": 9
