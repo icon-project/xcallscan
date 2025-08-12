@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { actionType, SendMessage, Transfer } from "./types";
 import { getHandler } from "./handler";
 import { RLP } from '@ethereumjs/rlp';
-import { chains, solana, sonic } from "./configs";
+import { chains, sonic } from "./configs";
 import { bigintDivisionToDecimalString } from "./utils";
 import axios from "axios";
 
@@ -184,6 +184,7 @@ export const parsePayloadData = (data: string, srcChainId: string, dstChainId: s
             const tokenAmount = BigInt(`0x${Buffer.from(rlp[3] as Uint8Array).toString('hex')}`)
             const callDataHex = `0x${Buffer.from(rlp[4] as Uint8Array).toString('hex')}`;
             let denom = ""
+            
             if (dstChainId in chains) {
                 const assetsInformation = chains[dstChainId].Assets
                 if (tokenAddress in assetsInformation) {

@@ -15,6 +15,7 @@ export const icon = "1768124270"
 export const solana = "1"
 export const sui = "21"
 export const injective = "19"
+export const near = "15"
 
 export type AssetInfo = {
   name: string;
@@ -48,7 +49,8 @@ const chainNameToIdMap: Record<string, string> = {
   icon: icon,
   solana: solana,
   sui: sui,
-  injective: injective
+  injective: injective,
+  near: near
 };
 
 function requireEnv(name: string): string {

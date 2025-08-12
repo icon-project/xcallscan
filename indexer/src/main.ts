@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 import { SendMessage, SodaxScannerResponse, Transfer } from "./types";
 import { bigintDivisionToDecimalString, multiplyDecimalBy10Pow18 } from "./utils";
 import pool from './db/db';
-import { ethers } from "ethers";
 
 dotenv.config();
 const SODAXSCAN_CONFIG = {

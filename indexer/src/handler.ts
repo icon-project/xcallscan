@@ -1,4 +1,4 @@
-import { arbitrum, avax, base, botanix, bsc, hyperliquid, icon, injective, nibiru, optimism, polygon, RPC_URLS, solana, sonic, stellar, sui } from './configs.ts';
+import { arbitrum, avax, base, botanix, bsc, hyperliquid, icon, injective, near, nibiru, optimism, polygon, RPC_URLS, solana, sonic, stellar, sui } from './configs.ts';
 import { EvmHandler } from './chains/evm/index.ts';
 import { ChainHandler } from './types/ChainHandler';
 import { StellarHandler } from './chains/stellar/index.ts';
@@ -6,6 +6,7 @@ import { IconHandler } from './chains/icon/index.ts';
 import { SuiHandler } from './chains/sui/index.ts';
 import { SolanaHandler } from './chains/solana/index.ts';
 import { InjectiveHandler } from './chains/injective/index.ts';
+import { NearHandler } from './chains/near/index.ts';
 
 
 const handlers: Record<string, ChainHandler> = {
@@ -24,6 +25,7 @@ const handlers: Record<string, ChainHandler> = {
     [sui]: new SuiHandler({ rpcUrl: RPC_URLS[sui] }),
     [solana]: new SolanaHandler({ rpcUrl: RPC_URLS[solana] }),
     [injective]: new InjectiveHandler({ rpcUrl: RPC_URLS[injective] }),
+    [near]: new NearHandler({ rpcUrl: RPC_URLS[near] }),
 };
 
 export function getHandler(chain: string): ChainHandler {
