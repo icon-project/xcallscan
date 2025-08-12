@@ -46,7 +46,7 @@ const buildProviderUrls = (urls: string[]) => {
             if (url.includes('avalanche')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_AVAX_API_KEY`]}`)
             if (url.includes('base')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_BASE_API_KEY`]}`)
             if (url.includes('bnb')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_BSC_API_KEY`]}`)
-            if (url.includes('optinism')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_OPTINISM_API_KEY`]}`)
+            if (url.includes('optimism')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_OPTINISM_API_KEY`]}`)
             if (url.includes('polygon')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_POLYGON_API_KEY`]}`)
             if (url.includes('sui')) correctUrls.push(`${url}`)
         } else if (url.includes('blockvision')) correctUrls.push(`${url}/${WEB3_BLOCKVISION_API_KEY}`)
