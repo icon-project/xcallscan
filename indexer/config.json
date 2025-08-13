@@ -1384,7 +1384,7 @@
     "injective": {
         "AssetManager": "inj1dg6tm62uup53wn2kn97caeqfwt0sukx3qjk8rw",
         "Assets": {
-            "ibc/2CBC2EA121AE42563B08028466F37B600F2D7D4282342DE938283CC3FB2BC00E":{
+            "ibc/2CBC2EA121AE42563B08028466F37B600F2D7D4282342DE938283CC3FB2BC00E": {
                 "name": "USDC",
                 "decimals": 6
             },
@@ -1472,6 +1472,11 @@
                 "name": "USDC",
                 "decimals": 6
             }
+        }
+    },
+    "near": {
+        "AssetManager": "nearAM",
+        "Assets": {            
         }
     }
 }
