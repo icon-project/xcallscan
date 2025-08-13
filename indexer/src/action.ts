@@ -122,17 +122,17 @@ export const decodeCallData = (callData: string, srcChainId: string, _: string):
                     swapOutputToken: result[3]
                 }
             }
-        case SELECTORS.tokenDeposit:
-            {
-                const tokenDeposit = abi.decode(['uint256', 'address'], data);
-                const assetsInformation = chains[srcChainId].Assets
-                const tokenAddress = tokenDeposit[1].toLowerCase()
-                return {
-                    action: 'Deposit',
-                    amount: tokenDeposit[0],
-                    actionText: tokenAddress in assetsInformation ? `Deposit ${bigintDivisionToDecimalString(tokenDeposit[0], assetsInformation[tokenAddress].decimals)} ${assetsInformation[tokenAddress].name}` : `deposit ${bigintDivisionToDecimalString(tokenDeposit[0], 18)} ${tokenAddress}`
-                };
-            }
+        // case SELECTORS.tokenDeposit:
+        //     {
+        //         const tokenDeposit = abi.decode(['uint256', 'address'], data);
+        //         const assetsInformation = chains[srcChainId].Assets
+        //         const tokenAddress = tokenDeposit[1].toLowerCase()
+        //         return {
+        //             action: 'Deposit',
+        //             amount: tokenDeposit[0],
+        //             actionText: tokenAddress in assetsInformation ? `Deposit ${bigintDivisionToDecimalString(tokenDeposit[0], assetsInformation[tokenAddress].decimals)} ${assetsInformation[tokenAddress].name}` : `deposit ${bigintDivisionToDecimalString(tokenDeposit[0], 18)} ${tokenAddress}`
+        //         };
+        //     }
 
         case SELECTORS.deposit:
             {
