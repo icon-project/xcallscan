@@ -1,8 +1,8 @@
 
-export type Action = "Supply" | "Borrow" | "Repay" | "Transfer" | "SendMessage" | "Deposit" | "Withdraw" | "CreateIntent" | "CancelIntent" | "IntentFilled"
+export type Action = "Supply" | "Borrow" | "Repay" | "Transfer" | "SendMsg" | "Deposit" | "Withdraw" | "CreateIntent" | "CancelIntent" | "IntentFilled"
 
 
-export const SendMessage = "SendMessage"
+export const SendMessage = "SendMsg"
 export const Transfer = "Transfer"
 export type actionType = {
   action: Action
