@@ -148,7 +148,7 @@ export const decodeCallData = (callData: string, srcChainId: string, _: string):
         default:
     }
     return {
-        action: 'SendMessage'
+        action: SendMessage
     };
 };
 
@@ -248,7 +248,7 @@ export const parsePayloadData = (data: string, srcChainId: string, dstChainId: s
             for (const call of innerCalls[0]) {
 
                 const result = decodeCallData(call[2], srcChainId, dstChainId);
-                if (result.action !== "SendMessage") {
+                if (result.action !== SendMessage) {
                     tmpResult = result
                     if (!tmpResult.amount) {
                         tmpResult.amount = call[1]
