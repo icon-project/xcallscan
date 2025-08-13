@@ -53,6 +53,10 @@ const chainNameToIdMap: Record<string, string> = {
   near: near
 };
 
+export const idToChainNameMap: Record<string, string> = Object.fromEntries(
+  Object.entries(chainNameToIdMap).map(([key, value]) => [value, key])
+);
+
 function requireEnv(name: string): string {
   const value = process.env[name];
   if (!value) {

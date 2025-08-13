@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { actionType, SendMessage, Transfer } from "./types";
 import { getHandler } from "./handler";
 import { RLP } from '@ethereumjs/rlp';
-import { chains, sonic } from "./configs";
+import { chains, idToChainNameMap, sonic } from "./configs";
 import { bigintDivisionToDecimalString } from "./utils";
 import axios from "axios";
 
@@ -102,7 +102,7 @@ export const decodeCallData = (callData: string, srcChainId: string, _: string):
                 }
                 const inputAmount = bigintDivisionToDecimalString(result[4], decimals)
                 const outputAmount = bigintDivisionToDecimalString(result[5], outputDecimals)
-                const actionText = `IntentSwap ${inputAmount} ${inputToken} -> ${outputAmount} ${outputToken}`
+                const actionText = `IntentSwap ${inputAmount} ${inputToken}(${idToChainNameMap[srcChainId]}) -> ${outputAmount} ${outputToken}(${idToChainNameMap[dstChainId]})`
                 return {
                     action: 'CreateIntent',
                     swapInputToken: result[2],
