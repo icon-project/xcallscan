@@ -41,7 +41,7 @@ async function parseTransactionEvent(response: SodaxScannerResponse) {
             const txHash = transaction.src_tx_hash;
             const payload = await getHandler(srcChainId).fetchPayload(txHash);
             let actionType = parsePayloadData(payload.payload, srcChainId, dstChainId);
-            if (actionType.action === 'SendMessage') {
+            if (actionType.action === SendMessage) {
                 if (srcChainId === solana) {
                     const payload = await parseSolanaTransaction(transaction.src_tx_hash, transaction.sn)
                     if(payload!=="0x"){
