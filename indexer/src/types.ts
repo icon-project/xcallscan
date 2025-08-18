@@ -18,6 +18,7 @@ export interface TxPayload {
   txnFee: string
   payload: string
   intentFilled?: boolean
+  intentCancelled?: boolean
   dstAddress?: string,
   swapInputToken?: string
   swapOutputToken?: string

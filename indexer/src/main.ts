@@ -44,7 +44,7 @@ async function parseTransactionEvent(response: SodaxScannerResponse) {
             if (actionType.action === SendMessage) {
                 if (srcChainId === solana) {
                     const payload = await parseSolanaTransaction(transaction.src_tx_hash, transaction.sn)
-                    if(payload!=="0x"){
+                    if (payload !== "0x") {
                         actionType = parsePayloadData(payload, srcChainId, dstChainId);
                     }
                 }
@@ -54,6 +54,10 @@ async function parseTransactionEvent(response: SodaxScannerResponse) {
                 actionType.actionText = payload.actionText;
                 actionType.swapInputToken = payload.swapInputToken;
                 actionType.swapOutputToken = payload.swapOutputToken;
+            }
+            if (payload.intentCancelled) {
+                actionType.action = "CancelIntent";
+                actionType.actionText = payload.actionText;
             }
             const assetManager = chains[srcChainId].AssetManager;
             let assetsInformation = chains[srcChainId].Assets;
