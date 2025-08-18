@@ -17,7 +17,6 @@ const SELECTORS = {
     aaveDeposit: calculateSelector('deposit(address,uint256,address,uint16)'),
     tokenDeposit: calculateSelector('deposit(uint256,address)'),
     createIntent: calculateSelector('createIntent((uint256,address,address,address,uint256,uint256,uint256,bool,uint256,uint256,bytes,bytes,address,bytes))'),
-    cancelIntent: calculateSelector('cancelIntent((uint256,address,address,address,uint256,uint256,uint256,bool,uint256,uint256,bytes,bytes,address,bytes))'),
 };
 
 
@@ -111,17 +110,18 @@ export const decodeCallData = (callData: string, srcChainId: string, _: string):
 
                 }
             }
-        case SELECTORS.cancelIntent:
-            {
-                const intentTuple = "(uint256,address,address,address,uint256,uint256,uint256,bool,uint256,uint256,bytes,bytes,address,bytes)";
-                const intentDecoded = abi.decode([intentTuple], data);
-                const result = intentDecoded[0]
-                return {
-                    action: 'CancelIntent',
-                    swapInputToken: result[2],
-                    swapOutputToken: result[3]
-                }
-            }
+        // case SELECTORS.cancelIntent:
+        //     {
+        //         console.log("Cancelling intent...")
+        //         const intentTuple = "(uint256,address,address,address,uint256,uint256,uint256,bool,uint256,uint256,bytes,bytes,address,bytes)";
+        //         const intentDecoded = abi.decode([intentTuple], data);
+        //         const result = intentDecoded[0]
+        //         return {
+        //             action: 'CancelIntent',
+        //             swapInputToken: result[2],
+        //             swapOutputToken: result[3]
+        //         }
+        //     }
         // case SELECTORS.tokenDeposit:
         //     {
         //         const tokenDeposit = abi.decode(['uint256', 'address'], data);

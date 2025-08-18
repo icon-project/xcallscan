@@ -9,6 +9,7 @@ const calculateTopicHash = (signature: string) => ethers.keccak256(ethers.toUtf8
 
 const MESSAGE_EVENT_TOPIC = calculateTopicHash('Message(uint256,bytes,uint256,uint256,bytes,bytes)')
 const INTENT_FILLED_TOPIC = calculateTopicHash('IntentFilled(bytes32,(bool,uint256,uint256,bool))')
+const INTENT_CANCELLED_TOPIC = calculateTopicHash('IntentCancelled(bytes32)')
 
 
 export class EvmHandler implements ChainHandler {
@@ -33,13 +34,21 @@ export class EvmHandler implements ChainHandler {
     const effectiveGasPrice = BigInt(tx.result.effectiveGasPrice);
     const txFee = gasUsed * effectiveGasPrice;
     let intentFilled = false
+    let intentCancelled = false
+    let intentCancelAction = ""
     for (const log of tx.result.logs ?? []) {
       const topics: string[] = log.topics;
       if (topics.includes(INTENT_FILLED_TOPIC)) {
         intentFilled = true
       }
+      if (topics.includes(INTENT_CANCELLED_TOPIC)) {
+        intentCancelled = true
+        const abi = ethers.AbiCoder.defaultAbiCoder();
+        const decoded = abi.decode(['bytes32'], log.data);
+        intentCancelAction = `IntentCancelled ${decoded[0]}`
+      }
     }
-    if (!intentFilled) {
+    if (!intentFilled && !intentCancelled) {
       for (const log of tx.result.logs ?? []) {
         const topics: string[] = log.topics;
         if (topics.includes(MESSAGE_EVENT_TOPIC)) {
@@ -50,10 +59,18 @@ export class EvmHandler implements ChainHandler {
             txnFee: `${bigintDivisionToDecimalString(txFee, 18)} ${this.denom}`,
             payload: payload,
             intentFilled,
+            intentCancelled,
             dstAddress: tx.result.to
           };
         }
       }
+    } else if (intentCancelled) {
+      return {
+        txnFee: `${bigintDivisionToDecimalString(txFee, 18)} ${this.denom}`,
+        intentCancelled,
+        actionText: intentCancelAction,
+        payload: "0x",
+      };
     } else {
       const { data: tx } = await axios.post(this.rpcUrl, {
         jsonrpc: '2.0',
