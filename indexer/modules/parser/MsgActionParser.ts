@@ -531,7 +531,7 @@ export class MsgActionParser {
             processSystemEvents: false, // whether to analyze system Soroban diagnostic events
             mapSac: false, // whether to map Classic assets to Soroban contracts automatically
             processFailedOpEffects: false, // whether to analyze effects in failed transactions
-            protocol: 21 // different versions of Stelalr protocol may yield uninform effects
+            protocol: 23 // different versions of Stelalr protocol may yield uninform effects
         })
 
         // native transfer

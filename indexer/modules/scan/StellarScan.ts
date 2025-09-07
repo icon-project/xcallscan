@@ -115,7 +115,7 @@ export class StellarScan implements IScan {
                         processSystemEvents: false,
                         mapSac: false,
                         processFailedOpEffects: false,
-                        protocol: 21
+                        protocol: 23
                     })
 
                     const invokeHostFunctionOp = res.operations[0]

@@ -111,7 +111,7 @@ export class StellarSubscriber extends BaseSubscriber {
                 processSystemEvents: false, // whether to analyze system Soroban diagnostic events
                 mapSac: false, // whether to map Classic assets to Soroban contracts automatically
                 processFailedOpEffects: false, // whether to analyze effects in failed transactions
-                protocol: 21 // different versions of Stelalr protocol may yield uninform effects
+                protocol: 23 // different versions of Stelalr protocol may yield uninform effects
             })
 
             // invokeHostFunctionOp
@@ -149,8 +149,8 @@ export class StellarSubscriber extends BaseSubscriber {
             }
 
             return eventLogs
-        } catch (error) {
-            this.logger.error(`${this.network} error ${JSON.stringify(error)}`)
+        } catch (error: any) {
+            this.logger.error(`${this.network} ${txHash} error ${error.message}`)
         }
 
         return []
@@ -198,59 +198,6 @@ export class StellarSubscriber extends BaseSubscriber {
                                         callback(eventLog)
                                     })
                                 }
-
-                                // for (let i = 0; i < txHashes.length; i++) {
-
-                                //     const eventLogs = await this.fetchEventLogs(txHashes[i])
-                                //     eventLogs.forEach((eventLog) => {
-                                //         callback(eventLog)
-                                //     })
-
-                                //     // // get transaction
-                                //     // const txHash = txHashes[i]
-                                //     // const tx = await this.getTx(txHash)
-
-                                //     // // parse xrd
-                                //     // const res = parseTxOperationsMeta({
-                                //     //     network: 'Public Global Stellar Network ; September 2015',
-                                //     //     tx: tx.envelopeXdr, // trasnaction envelope XDR
-                                //     //     result: tx.resultXdr, // trasnaction result XDR
-                                //     //     meta: tx.resultMetaXdr, // trasnaction meta XDR
-                                //     //     processSystemEvents: false, // whether to analyze system Soroban diagnostic events
-                                //     //     mapSac: false, // whether to map Classic assets to Soroban contracts automatically
-                                //     //     processFailedOpEffects: false, // whether to analyze effects in failed transactions
-                                //     //     protocol: 21 // different versions of Stelalr protocol may yield uninform effects
-                                //     // })
-
-                                //     // // invokeHostFunctionOp
-                                //     // const invokeHostFunctionOp = res.operations[0]
-                                //     // const contractEvents = invokeHostFunctionOp.effects.filter((e: any) => e.type == 'contractEvent')
-
-                                //     // for (let j = 0; j < eventNames.length; j++) {
-                                //     //     const eventName = eventNames[j]
-                                //     //     const contractEvent = contractEvents.find((obj: any) => obj.topics.includes(eventName))
-                                //     //     const decodeEventLog = await this.decoder.decodeEventLog(contractEvent?.data, eventName)
-                                //     //     if (decodeEventLog) {
-                                //     //         const txTo = contractEvent.contract
-                                //     //         const txFee = res.effects.find((e: any) => e.type == 'feeCharged')?.charged
-                                //     //         const log: EventLog = {
-                                //     //             // txRaw: tx.transaction,
-                                //     //             blockNumber: Number(tx.ledger),
-                                //     //             blockTimestamp: Number(tx.createdAt),
-                                //     //             txHash: txHash,
-                                //     //             txFrom: invokeHostFunctionOp.source,
-                                //     //             // recipient is contract
-                                //     //             txTo: txTo,
-                                //     //             txFee: txFee?.toString(),
-                                //     //             // txValue: tx.value.toString(),
-                                //     //             eventName: eventName,
-                                //     //             eventData: decodeEventLog
-                                //     //         }
-
-                                //     //         callback(log)
-                                //     //     }
-                                //     // }
-                                // }
                             }
                         }
                     } catch (error) {
