@@ -1,4 +1,4 @@
-import { EVENT, RPC_URLS } from '../../common/constants'
+import { EVENT, RPC_URLS, WEB3_SUDOBLOCK_SUI_API_KEY } from '../../common/constants'
 import { IScan } from '../../interfaces/IScan'
 import { EventLog } from '../../types/EventLog'
 import logger from '../logger/logger'
@@ -15,7 +15,9 @@ export class SuiVisionScan implements IScan {
     async callApi(apiUrl: string, postData: any): Promise<any> {
         try {
             const axiosInstance = AxiosCustomInstance.getInstance()
-            const res = await axiosInstance.post(apiUrl, postData)
+            const headers: any = {}
+            if (WEB3_SUDOBLOCK_SUI_API_KEY) headers['apikey'] = WEB3_SUDOBLOCK_SUI_API_KEY
+            const res = await axiosInstance.post(apiUrl, postData, { headers })
             return res.data.result
         } catch (error: any) {
             logger.error(`${this.network} called api failed ${apiUrl} ${error.code}`)

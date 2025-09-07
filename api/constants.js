@@ -15,6 +15,7 @@ const WEB3_BLOCKVISION_API_KEY = process.env.WEB3_BLOCKVISION_API_KEY
 const WEB3_ANKR_API_KEY = process.env.WEB3_ANKR_API_KEY
 const WEB3_INSTANTNODES_API_KEY = process.env.WEB3_INSTANTNODES_API_KEY
 const WEB3_QUICKNODE_API_KEY = process.env.WEB3_QUICKNODE_API_KEY
+const WEB3_SUDOBLOCK_SUI_API_KEY = process.env.WEB3_SUDOBLOCK_SUI_API_KEY
 
 const NETWORK = {
     ICON: 'icon',
@@ -43,7 +44,15 @@ const buildProviderUrls = (urls) => {
         // trim /
         url = url.replace(/\/+$/, '')
 
-        if (url.includes('blockvision')) correctUrls.push(`${url}/${WEB3_BLOCKVISION_API_KEY}`)
+        if (url.includes('sudoblock')) {
+            if (url.includes('arbitrum')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_ARBITRUM_API_KEY`]}`)
+            if (url.includes('avalanche')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_AVAX_API_KEY`]}`)
+            if (url.includes('base')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_BASE_API_KEY`]}`)
+            if (url.includes('bnb')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_BSC_API_KEY`]}`)
+            if (url.includes('optimism')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_OPTINISM_API_KEY`]}`)
+            if (url.includes('polygon')) correctUrls.push(`${url}/${process.env[`WEB3_SUDOBLOCK_POLYGON_API_KEY`]}`)
+            if (url.includes('sui')) correctUrls.push(`${url}`)
+        } else if (url.includes('blockvision')) correctUrls.push(`${url}/${WEB3_BLOCKVISION_API_KEY}`)
         else if (url.includes('alchemy')) correctUrls.push(`${url}/${WEB3_ALCHEMY_API_KEY}`)
         else if (url.includes('chainstack')) correctUrls.push(`${url}/${WEB3_CHAINSTACK_API_KEY}`)
         else if (url.includes('blastapi')) correctUrls.push(`${url}/${WEB3_BLAST_API_KEY}`)
@@ -104,5 +113,6 @@ module.exports = {
     NETWORK,
     RATE_LIMIT,
     RPC_URLS,
-    META_URLS
+    META_URLS,
+    WEB3_SUDOBLOCK_SUI_API_KEY
 }

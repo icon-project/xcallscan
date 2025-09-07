@@ -1,7 +1,7 @@
 import logger from '../logger/logger'
 import { BigNumber, ethers } from 'ethers'
 import axios from 'axios'
-import { API_KEY, API_URL, ASSET_MAP, NATIVE_ASSETS, NETWORK, RPC_URLS } from '../../common/constants'
+import { API_KEY, API_URL, ASSET_MAP, NATIVE_ASSETS, NETWORK, RPC_URLS, WEB3_SUDOBLOCK_SUI_API_KEY } from '../../common/constants'
 import { cosmosHash, sleep } from '../../common/helper'
 import AxiosCustomInstance from '../scan/AxiosCustomInstance'
 import { retryAsync } from 'ts-retry'
@@ -110,9 +110,12 @@ export class MsgActionParser {
 
     private async callRpc(network: string, postData: any) {
         const apiUrl = `${RPC_URLS[network][0]}`
+        const headers: any = {}
+        if (network === NETWORK.SUI && WEB3_SUDOBLOCK_SUI_API_KEY) headers['apikey'] = WEB3_SUDOBLOCK_SUI_API_KEY
+
         try {
             const axiosInstance = AxiosCustomInstance.getInstance()
-            const res = await retryAsync(() => axiosInstance.post(apiUrl, postData), defaultRetryOptions)
+            const res = await retryAsync(() => axiosInstance.post(apiUrl, postData, { headers }), defaultRetryOptions)
 
             return res.data.result
         } catch (error: any) {
@@ -258,9 +261,9 @@ export class MsgActionParser {
         // const provider = new ethers.providers.JsonRpcProvider(RPC_URLS[network][0])
         let tx = undefined
 
-        let provider: ethers.providers.FallbackProvider | ethers.providers.JsonRpcProvider
+        let provider: ethers.providers.JsonRpcProvider
         try {
-            provider = new ethers.providers.FallbackProvider(RPC_URLS[network].map((n) => new ethers.providers.StaticJsonRpcProvider(n)).slice(0, 3))
+            provider = new ethers.providers.JsonRpcProvider(RPC_URLS[network][0])
             tx = await retryAsync(() => provider.getTransaction(txHash), defaultRetryOptions)
         } catch (error) {
             logger.error(`RPC_URLS ${JSON.stringify(RPC_URLS[network])} incorrect`)

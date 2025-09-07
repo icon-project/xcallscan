@@ -10,6 +10,7 @@
         "bsc": {
             "api": "https://api.bscscan.com/api",
             "rpcs": [
+                "https://bnb.rpc.sudoblock.io",
                 "https://bnb-mainnet.g.alchemy.com/v2",
                 "https://rpc.ankr.com/bsc",
                 "https://binance.llamarpc.com",
@@ -88,6 +89,7 @@
         "avax": {
             "api": "https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api",
             "rpcs": [
+                "https://avalanche.rpc.sudoblock.io",
                 "https://avalanche-mainnet.core.chainstack.com/ext/bc/C/rpc",
                 "https://rpc.ankr.com/avalanche",
                 "https://avalanche.drpc.org",
@@ -101,6 +103,7 @@
         "base": {
             "api": "https://api.basescan.org/api",
             "rpcs": [
+                "https://base.rpc.sudoblock.io",
                 "https://base-mainnet.g.alchemy.com/v2",
                 "https://rpc.ankr.com/base",
                 "https://mainnet.base.org",
@@ -116,12 +119,12 @@
         "arbitrum": {
             "api": "https://api.arbiscan.io/api",
             "rpcs": [
-                "https://light-convincing-sunset.arbitrum-mainnet.quiknode.pro",
+                "https://arbitrum.rpc.sudoblock.io",
                 "https://arb-mainnet.g.alchemy.com/v2",
+                "https://light-convincing-sunset.arbitrum-mainnet.quiknode.pro",
                 "https://rpc.ankr.com/arbitrum",
                 "https://arbitrum-one.publicnode.com",
-                "https://arbitrum.meowrpc.com",
-                "https://arbitrum.llamarpc.com"
+                "https://arbitrum.meowrpc.com"
             ],
             "wss": [],
             "btp_network_id": "0xa4b1.arbitrum",
@@ -131,10 +134,10 @@
         "optimism": {
             "api": "https://api-optimistic.etherscan.io/api",
             "rpcs": [
+                "https://optimism.rpc.sudoblock.io",
                 "https://opt-mainnet.g.alchemy.com/v2",
                 "https://rpc.ankr.com/optimism",
                 "https://mainnet.optimism.io",
-                "https://optimism.llamarpc.com",
                 "https://optimism.meowrpc.com",
                 "https://optimism.drpc.org"
             ],
@@ -146,6 +149,7 @@
         "sui": {
             "api": "",
             "rpcs": [
+                "https://sui.rpc.sudoblock.io",
                 "https://rpc.ankr.com/sui",
                 "https://sui-mainnet.blockvision.org/v1",
                 "https://sui-mainnet.blastapi.io",
@@ -159,9 +163,9 @@
         "polygon": {
             "api": "https://api.polygonscan.com/api",
             "rpcs": [
+                "https://polygon.rpc.sudoblock.io",
                 "https://polygon-mainnet.g.alchemy.com/v2",
                 "https://rpc.ankr.com/polygon",
-                "https://polygon.llamarpc.com",
                 "https://rpc-mainnet.matic.quiknode.pro"
             ],
             "wss": [],
@@ -173,9 +177,8 @@
             "api": "",
             "rpcs": [
                 "https://light-convincing-sunset.stellar-mainnet.quiknode.pro",
-                "https://rpc.ankr.com/stellar_soroban",
-                "https://mainnet.stellar.validationcloud.io/v1",
-                "https://soroban-rpc.mainnet.stellar.gateway.fm"
+                "https://mainnet.sorobanrpc.com",
+                "https://rpc.ankr.com/stellar_soroban"
             ],
             "wss": [],
             "btp_network_id": "stellar",
@@ -266,11 +269,11 @@
         },
         "stellar": {
             "xcall": ["CB6IJRLOWGQXUDSYGFOAAZYVOESQ6TVSTU3242I7PG3LH7F43PPX2HE6"],
-            "intents": []
+            "intents": ["CDZPLSD426ZCR5XB2D7HDYEDEAS5KYZFX6JEPLFY7QOQ3QHE6DHMECW7"]
         },
         "solana": {
             "xcall": ["3LWnGCRFuS4TJ5WeDKeWdoSRptB2tzeEFhSBFFu4ogMo"],
-            "intents": []
+            "intents": ["FgPgECEpBRdV9gV18jR7icvpPabEvgVJof3A6aPn1UjY"]
         }
     }
 }
