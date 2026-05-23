@@ -119,8 +119,8 @@
         "arbitrum": {
             "api": "https://api.etherscan.io/v2/api?chainid=42161",
             "rpcs": [
-                "https://arb-mainnet.g.alchemy.com/v2",
                 "https://arbitrum.rpc.sudoblock.io",
+                "https://arb-mainnet.g.alchemy.com/v2",
                 "https://light-convincing-sunset.arbitrum-mainnet.quiknode.pro",
                 "https://rpc.ankr.com/arbitrum",
                 "https://arbitrum-one.publicnode.com",
